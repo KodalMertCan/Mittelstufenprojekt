@@ -45,10 +45,3 @@ Dieser Ordner enthält die finale Zusammenführung des Teams: die konsolidierte 
 9. Gradient Accumulation (effektiv Batch 32 trotz 16er Mini-Batch)
 
 ---
-
-## Herkunft der Inhalte
-
-| Beitrag | Mitglied |
-|---|---|
-| Konsolidierte EDA | Mert |
-| Best-of-Model (V5 Ensemble + Inference) | Fabian |
