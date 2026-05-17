@@ -8,10 +8,10 @@ Dieser Ordner enthält die finale Zusammenführung des Teams: die konsolidierte 
 
 | Datei | Inhalt |
 |---|---|
-| [merged_01_EDA.ipynb](merged_01_EDA.ipynb) | Konsolidierte Explorative Datenanalyse über alle drei Datensätze (Train1, Train2, Test). Enthält: Klassenverteilung, Imbalance-Analyse (14,3x), Kamera-Distribution-Shift (Train 58% cam1 / Test 36% cam1), cam1 vs. cam2 Beispielbilder pro Klasse, Bounding-Box-Analyse, Zusammenfassung. **Quelle:** Mert |
-| [v5_train.ipynb](v5_train.ipynb) | **Best-of-Model Training (V5)** – Ensemble aus DINOv2 Large + ConvNeXt V2 Large. Bestes Ergebnis im Leaderboard. **Quelle:** Fabian |
-| [v5_inference.ipynb](v5_inference.ipynb) | **Best-of-Model Inferenz (V5)** – Erstellt die finale Kaggle-Submission. **Quelle:** Fabian |
-| [v5_inference_compare.ipynb](v5_inference_compare.ipynb) | Vergleichs-Inferenz für V5: Gegenüberstellung verschiedener Inferenz-Varianten (z. B. TTA, Ensemble-Gewichtung). **Quelle:** Fabian |
+| [merged_01_EDA.ipynb](merged_01_EDA.ipynb) | Konsolidierte Explorative Datenanalyse über alle drei Datensätze (Train1, Train2, Test). Enthält: Klassenverteilung, Imbalance-Analyse (14,3x), Kamera-Distribution-Shift (Train 58% cam1 / Test 36% cam1), cam1 vs. cam2 Beispielbilder pro Klasse, Bounding-Box-Analyse, Zusammenfassung. |
+| [v5_train.ipynb](v5_train.ipynb) | **Best-of-Model Training (V5)** – Ensemble aus DINOv2 Large + ConvNeXt V2 Large. Bestes Ergebnis im Leaderboard.  |
+| [v5_inference.ipynb](v5_inference.ipynb) | **Best-of-Model Inferenz (V5)** – Erstellt die finale Kaggle-Submission. |
+| [v5_inference_compare.ipynb](v5_inference_compare.ipynb) | Vergleichs-Inferenz für V5: Gegenüberstellung verschiedener Inferenz-Varianten (z. B. TTA, Ensemble-Gewichtung).|
 
 ---
 
