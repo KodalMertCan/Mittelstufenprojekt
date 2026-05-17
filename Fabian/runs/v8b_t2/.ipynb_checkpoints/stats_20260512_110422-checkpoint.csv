@@ -1,0 +1,4 @@
+timestamp,fold,epoch,phase,lr,train_loss,train_f1,val_loss,val_f1,val_source,improved,epoch_secs
+2026-05-12 11:26:23,2,1,warmup,1.00e-06,1.3292,0.4202,1.3365,0.4255,model,1,1298
+2026-05-12 11:47:43,2,2,warmup,3.40e-05,0.9012,0.6686,0.8589,0.7893,model,1,1279
+2026-05-12 12:09:05,2,3,warmup,6.70e-05,0.7670,0.7361,0.8630,0.7210,model,0,1279

@@ -1,0 +1,58 @@
+2026-05-08 07:11:26 [INFO] === V8a Training gestartet ===
+2026-05-08 07:11:26 [INFO] Logfile : runs/v8a_t2/train_20260508_071126.log
+2026-05-08 07:11:26 [INFO] Stats   : runs/v8a_t2/stats_20260508_071126.csv
+2026-05-08 07:11:26 [INFO] PID     : 1753
+2026-05-08 07:11:26 [INFO] CWD     : /home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian
+2026-05-08 07:11:26 [INFO] Python  : 3.10.7
+2026-05-08 07:11:29 [INFO] DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+2026-05-08 07:11:29 [INFO] Device: cuda
+2026-05-08 07:11:29 [INFO]   GPU 0: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 07:11:29 [INFO]   GPU 1: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 07:11:29 [INFO]   GPU 2: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 07:11:29 [INFO]   GPU 3: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO] Daten laden
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO] Pseudo-Labels: 1000 hinzugefuegt
+2026-05-08 07:11:29 [INFO]   pseudo 0 - Lateral_lying_left       200
+2026-05-08 07:11:29 [INFO]   pseudo 1 - Lateral_lying_right      200
+2026-05-08 07:11:29 [INFO]   pseudo 2 - Sitting                  200
+2026-05-08 07:11:29 [INFO]   pseudo 3 - Standing                 200
+2026-05-08 07:11:29 [INFO]   pseudo 4 - Sternal_lying            200
+2026-05-08 07:11:29 [INFO] Instanzen total: 24450  echt: 23450  pseudo: 1000
+2026-05-08 07:11:29 [INFO]   klasse 0 - Lateral_lying_left      3283
+2026-05-08 07:11:29 [INFO]   klasse 1 - Lateral_lying_right     3635
+2026-05-08 07:11:29 [INFO]   klasse 2 - Sitting                  895
+2026-05-08 07:11:29 [INFO]   klasse 3 - Standing               10128
+2026-05-08 07:11:29 [INFO]   klasse 4 - Sternal_lying           6509
+2026-05-08 07:11:29 [INFO] STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+2026-05-08 07:11:29 [INFO] 
+3 Folds:
+2026-05-08 07:11:29 [INFO]   Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+2026-05-08 07:11:29 [INFO]   Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+2026-05-08 07:11:29 [INFO]   Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+2026-05-08 07:11:29 [INFO] ############################################################
+2026-05-08 07:11:29 [INFO]   ARCHITEKTUR 1/1: dinov2l (vit_large_patch14_dinov2.lvd142m)
+2026-05-08 07:11:29 [INFO] ############################################################
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO]   [dinov2l] FOLD 1/3  Val=pen1_tur_cam1
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO]   Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+2026-05-08 07:11:29 [INFO]   Checkpoint existiert (val_f1=0.8557), skip
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO]   [dinov2l] FOLD 2/3  Val=pen2_orb_cam2
+2026-05-08 07:11:29 [INFO] ============================================================
+2026-05-08 07:11:29 [INFO]   Train: 24330 (1000 pseudo) | Val: 120 | effBatch=32
+2026-05-08 07:11:34 [INFO] Loading pretrained weights from Hugging Face hub (timm/vit_large_patch14_dinov2.lvd142m)
+2026-05-08 07:11:34 [INFO] [timm/vit_large_patch14_dinov2.lvd142m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-05-08 07:11:34 [INFO] Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2026-05-08 07:11:35 [INFO]   Gradient Checkpointing aktiviert
+2026-05-08 07:11:36 [INFO]   Modell: vit_large_patch14_dinov2.lvd142m (304.4M Params)
+2026-05-08 07:11:36 [INFO]   nach Model-Init MEM: GPU0=1.2/1.2GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 07:11:36 [INFO]   EMA aktiv (decay=0.9995)
+2026-05-08 07:11:36 [INFO]   nach EMA-Init MEM: GPU0=2.4/2.4GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 07:11:36 [INFO]   CW: ['1.49', '1.35', '5.44', '0.48', '0.75']
+2026-05-08 07:11:36 [INFO]   ViT LLRD: 24 Layers, decay=0.75, 50 groups
+2026-05-08 07:11:36 [INFO]   -- Epoch 01/30 [warmup] lr=1.00e-06 --
+2026-05-08 07:12:06 [WARNING] Interrupted by user (KeyboardInterrupt)
+2026-05-08 07:12:06 [INFO] === Total time: 36s ===

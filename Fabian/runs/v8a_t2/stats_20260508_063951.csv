@@ -1,0 +1,1 @@
+timestamp,fold,epoch,phase,lr,train_loss,train_f1,val_loss,val_f1,val_source,improved,epoch_secs

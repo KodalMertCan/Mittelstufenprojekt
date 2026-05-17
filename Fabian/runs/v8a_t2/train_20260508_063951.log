@@ -1,0 +1,72 @@
+2026-05-08 06:39:51 [INFO] === V8a Training gestartet ===
+2026-05-08 06:39:51 [INFO] Logfile : runs/v8a_t2/train_20260508_063951.log
+2026-05-08 06:39:51 [INFO] Stats   : runs/v8a_t2/stats_20260508_063951.csv
+2026-05-08 06:39:51 [INFO] PID     : 346
+2026-05-08 06:39:51 [INFO] CWD     : /home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian
+2026-05-08 06:39:51 [INFO] Python  : 3.10.7
+2026-05-08 06:39:54 [INFO] DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+2026-05-08 06:39:54 [INFO] Device: cuda
+2026-05-08 06:39:54 [INFO]   GPU 0: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 06:39:54 [INFO]   GPU 1: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 06:39:54 [INFO]   GPU 2: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 06:39:54 [INFO]   GPU 3: Tesla V100-SXM2-32GB (33.8 GB)
+2026-05-08 06:39:54 [INFO] ============================================================
+2026-05-08 06:39:54 [INFO] Daten laden
+2026-05-08 06:39:54 [INFO] ============================================================
+2026-05-08 06:39:54 [INFO] Pseudo-Labels: 1000 hinzugefuegt
+2026-05-08 06:39:54 [INFO]   pseudo 0 - Lateral_lying_left       200
+2026-05-08 06:39:54 [INFO]   pseudo 1 - Lateral_lying_right      200
+2026-05-08 06:39:54 [INFO]   pseudo 2 - Sitting                  200
+2026-05-08 06:39:54 [INFO]   pseudo 3 - Standing                 200
+2026-05-08 06:39:54 [INFO]   pseudo 4 - Sternal_lying            200
+2026-05-08 06:39:54 [INFO] Instanzen total: 24450  echt: 23450  pseudo: 1000
+2026-05-08 06:39:54 [INFO]   klasse 0 - Lateral_lying_left      3283
+2026-05-08 06:39:54 [INFO]   klasse 1 - Lateral_lying_right     3635
+2026-05-08 06:39:54 [INFO]   klasse 2 - Sitting                  895
+2026-05-08 06:39:54 [INFO]   klasse 3 - Standing               10128
+2026-05-08 06:39:54 [INFO]   klasse 4 - Sternal_lying           6509
+2026-05-08 06:39:54 [INFO] STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+2026-05-08 06:39:54 [INFO] 
+3 Folds:
+2026-05-08 06:39:54 [INFO]   Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+2026-05-08 06:39:54 [INFO]   Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+2026-05-08 06:39:54 [INFO]   Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+2026-05-08 06:39:54 [INFO] ############################################################
+2026-05-08 06:39:54 [INFO]   ARCHITEKTUR 1/1: dinov2l (vit_large_patch14_dinov2.lvd142m)
+2026-05-08 06:39:54 [INFO] ############################################################
+2026-05-08 06:39:54 [INFO] ============================================================
+2026-05-08 06:39:54 [INFO]   [dinov2l] FOLD 1/3  Val=pen1_tur_cam1
+2026-05-08 06:39:54 [INFO] ============================================================
+2026-05-08 06:39:54 [INFO]   Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+2026-05-08 06:39:55 [INFO]   Checkpoint existiert (val_f1=0.8557), skip
+2026-05-08 06:39:55 [INFO] ============================================================
+2026-05-08 06:39:55 [INFO]   [dinov2l] FOLD 2/3  Val=pen2_orb_cam2
+2026-05-08 06:39:55 [INFO] ============================================================
+2026-05-08 06:39:55 [INFO]   Train: 24330 (1000 pseudo) | Val: 120 | effBatch=32
+2026-05-08 06:40:00 [INFO] Loading pretrained weights from Hugging Face hub (timm/vit_large_patch14_dinov2.lvd142m)
+2026-05-08 06:40:00 [WARNING] Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-05-08 06:40:14 [INFO] [timm/vit_large_patch14_dinov2.lvd142m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-05-08 06:40:14 [INFO] Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2026-05-08 06:40:15 [INFO]   Modell: vit_large_patch14_dinov2.lvd142m (304.4M Params)
+2026-05-08 06:40:15 [INFO]   nach Model-Init MEM: GPU0=1.2/1.2GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 06:40:15 [INFO]   EMA aktiv (decay=0.9995)
+2026-05-08 06:40:15 [INFO]   nach EMA-Init MEM: GPU0=2.4/2.4GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 06:40:15 [INFO]   CW: ['1.49', '1.35', '5.44', '0.48', '0.75']
+2026-05-08 06:40:15 [INFO]   ViT LLRD: 24 Layers, decay=0.75, 50 groups
+2026-05-08 06:40:15 [INFO]   -- Epoch 01/30 [warmup] lr=1.00e-06 --
+2026-05-08 06:40:31 [ERROR] FATAL: Training crashed
+2026-05-08 06:40:31 [ERROR] Traceback (most recent call last):
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8a_train.py", line 774, in <module>
+    main()
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8a_train.py", line 680, in main
+    train_loss, train_f1, _ = train_one_epoch(
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8a_train.py", line 492, in train_one_epoch
+    scaler.scale(loss).backward()
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA out of memory. Tried to allocate 44.00 MiB (GPU 0; 31.75 GiB total capacity; 27.49 GiB already allocated; 1.11 GiB free; 27.86 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+2026-05-08 06:40:31 [INFO]   bei Crash MEM: GPU0=29.5/29.9GB GPU1=0.0/26.6GB GPU2=0.0/26.6GB GPU3=0.0/26.6GB
+2026-05-08 06:40:31 [INFO] === Total time: 37s ===
