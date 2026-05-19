@@ -11,7 +11,7 @@ Deep Learning Projekt im Rahmen der **Precision Livestock Farming (PLF)**: Klass
 
 ## Repository-Struktur
 
-Das Repository ist nach der in der Aufgabenstellung geforderten Struktur aufgebaut: ein Unterordner pro Teammitglied für die persönlichen Experimente, sowie ein `Merge/`-Ordner für die finale Zusammenführung.
+Das Repository ist nach der in der Aufgabenstellung geforderten Struktur aufgebaut: ein Unterordner pro Teammitglied für die persönlichen Experimente, sowie ein `merged/`-Ordner für die finale Zusammenführung.
 
 ```
 Mittelstufenprojekt-dev/
@@ -67,4 +67,4 @@ Das finale Modell liegt im [`merged/`](merged/)-Ordner: ein **Ensemble aus DINOv
 
 ## Einstieg
 
-Für einen schnellen Überblick → [`Merge/README.md`](Merge/README.md) lesen. Dort liegen die konsolidierte EDA und das finale Modell mit ausführlicher Dokumentation der Hyperparameter und der Ensemble-Strategie.
+Für einen schnellen Überblick → [`merged/README.md`](merged/README.md) lesen. Dort liegen die konsolidierte EDA und das finale Modell mit ausführlicher Dokumentation der Hyperparameter und der Ensemble-Strategie.
