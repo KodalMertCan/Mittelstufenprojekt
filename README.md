@@ -28,15 +28,15 @@ Mittelstufenprojekt-dev/
 | Ordner | Inhalt | README |
 |---|---|---|
 | [`Daniel/`](Daniel/) | Individuelle Experimente von Daniel | – |
-| [`Fabian/`](Fabian/) | Individuelle Experimente von Fabian (V3–V8, DANN, KFold, Ensemble-Strategien) | – |
+| [`Fabian/`](Fabian/) | Individuelle Experimente von Fabian (V3–V8, DANN, KFold, Ensemble-Strategien) | [README](Fabian/ARBEITSPROTOKOLL.md) |
 | [`Mert/`](Mert/) | Individuelle Experimente von Mert (Baseline → ResNet50 → ConvNeXt → EVA02 → ConvNeXt-V2-Huge) | [README](Mert/README.md) |
-| [`Merge/`](merged/) | **Einstiegspunkt für die finalen Ergebnisse:** Konsolidierte EDA + Best-of-Model (V5 Ensemble) | [README](Merge/README.md) |
+| [`merged/`](merged/) | **Einstiegspunkt für die finalen Ergebnisse:** Konsolidierte EDA + Best-of-Model (V5 Ensemble) | [README](merged/README.md) |
 
 ---
 
 ## Best-of-Model
 
-Das finale Modell liegt im [`Merge/`](Merge/)-Ordner: ein **Ensemble aus DINOv2 Large (ViT) + ConvNeXt V2 Large (CNN)** (Version V5), trainiert auf Train2 mit Strict CLO-Validierung über die Test-Kamera-Folds. Details siehe [Merge/README.md](Merge/README.md).
+Das finale Modell liegt im [`merged/`](merged/)-Ordner: ein **Ensemble aus DINOv2 Large (ViT) + ConvNeXt V2 Large (CNN)** (Version V5), trainiert auf Train2 mit Strict CLO-Validierung über die Test-Kamera-Folds. Details siehe [merged/README.md](merged/README.md).
 
 ---
 
