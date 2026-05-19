@@ -1,0 +1,312 @@
+2026-05-11 12:53:18 [INFO] === V8b Training (KD) gestartet ===
+2026-05-11 12:53:18 [INFO] Logfile : runs/v8b_t2/train_20260511_125318.log
+2026-05-11 12:53:18 [INFO] Stats   : runs/v8b_t2/stats_20260511_125318.csv
+2026-05-11 12:53:18 [INFO] PID     : 38286
+2026-05-11 12:53:18 [INFO] CWD     : /home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian
+2026-05-11 12:53:18 [INFO] Python  : 3.10.7
+2026-05-11 12:53:20 [INFO] DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+2026-05-11 12:53:21 [INFO] Device (Master): cuda:1  |  device_ids=[1, 0, 2, 3]
+2026-05-11 12:53:21 [INFO]   GPU 0: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 12:53:21 [INFO]   GPU 1: Tesla V100-SXM2-32GB (33.8 GB)  [MASTER]
+2026-05-11 12:53:21 [INFO]   GPU 2: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 12:53:21 [INFO]   GPU 3: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] Daten laden
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] Pseudo-Labels: 1000 hinzugefuegt
+2026-05-11 12:53:21 [INFO]   pseudo 0 - Lateral_lying_left       200
+2026-05-11 12:53:21 [INFO]   pseudo 1 - Lateral_lying_right      200
+2026-05-11 12:53:21 [INFO]   pseudo 2 - Sitting                  200
+2026-05-11 12:53:21 [INFO]   pseudo 3 - Standing                 200
+2026-05-11 12:53:21 [INFO]   pseudo 4 - Sternal_lying            200
+2026-05-11 12:53:21 [INFO] Instanzen total: 24450  echt: 23450  pseudo: 1000
+2026-05-11 12:53:21 [INFO]   klasse 0 - Lateral_lying_left      3283
+2026-05-11 12:53:21 [INFO]   klasse 1 - Lateral_lying_right     3635
+2026-05-11 12:53:21 [INFO]   klasse 2 - Sitting                  895
+2026-05-11 12:53:21 [INFO]   klasse 3 - Standing               10128
+2026-05-11 12:53:21 [INFO]   klasse 4 - Sternal_lying           6509
+2026-05-11 12:53:21 [INFO] STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+2026-05-11 12:53:21 [INFO] 
+3 Folds:
+2026-05-11 12:53:21 [INFO]   Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+2026-05-11 12:53:21 [INFO]   Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+2026-05-11 12:53:21 [INFO]   Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] Schritt 1: Teacher-Soft-Targets
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] [CACHE] geladen: teacher_soft_t2_v7.npy  shape=(24450, 5)
+2026-05-11 12:53:21 [INFO]   nach Teacher-Precompute MEM: GPU0=0.0/0.0GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] Schritt 2: Student-Training mit KD
+2026-05-11 12:53:21 [INFO] KD: alpha=0.5, T=4.0
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO] ############################################################
+2026-05-11 12:53:21 [INFO]   STUDENT: dinov2l (vit_large_patch14_dinov2.lvd142m)
+2026-05-11 12:53:21 [INFO] ############################################################
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO]   [dinov2l] FOLD 1/3  Val=pen1_tur_cam1
+2026-05-11 12:53:21 [INFO] ============================================================
+2026-05-11 12:53:21 [INFO]   Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+2026-05-11 12:53:26 [INFO] Loading pretrained weights from Hugging Face hub (timm/vit_large_patch14_dinov2.lvd142m)
+2026-05-11 12:53:26 [INFO] [timm/vit_large_patch14_dinov2.lvd142m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-05-11 12:53:26 [INFO] Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2026-05-11 12:53:26 [INFO]   Gradient Checkpointing aktiviert
+2026-05-11 12:53:27 [INFO]   Student: vit_large_patch14_dinov2.lvd142m (304.4M Params)
+2026-05-11 12:53:27 [INFO]   nach Model-Init MEM: GPU0=0.0/0.0GB GPU1=1.2/1.2GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:53:27 [INFO]   EMA aktiv (decay=0.9995)
+2026-05-11 12:53:27 [INFO]   nach EMA-Init MEM: GPU0=0.0/0.0GB GPU1=2.4/2.4GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:53:27 [INFO]   CW: ['1.48', '1.34', '5.44', '0.49', '0.75']
+2026-05-11 12:53:27 [INFO]   ViT LLRD: 24 Layers, decay=0.75, 50 groups
+2026-05-11 12:53:28 [INFO]   -- Epoch 01/30 [warmup] lr=1.00e-06 --
+2026-05-11 12:55:45 [INFO]   [F1 E01 TRAIN] batch  151/1515 loss=1.7375 elapsed=2m17s eta=20m41s
+2026-05-11 12:57:51 [INFO]   [F1 E01 TRAIN] batch  302/1515 loss=1.6360 elapsed=4m23s eta=17m39s
+2026-05-11 12:59:58 [INFO]   [F1 E01 TRAIN] batch  453/1515 loss=1.5460 elapsed=6m30s eta=15m15s
+2026-05-11 13:02:05 [INFO]   [F1 E01 TRAIN] batch  604/1515 loss=1.4905 elapsed=8m37s eta=13m00s
+2026-05-11 13:04:12 [INFO]   [F1 E01 TRAIN] batch  755/1515 loss=1.4571 elapsed=10m44s eta=10m48s
+2026-05-11 13:06:18 [INFO]   [F1 E01 TRAIN] batch  906/1515 loss=1.4240 elapsed=12m50s eta=8m38s
+2026-05-11 13:08:25 [INFO]   [F1 E01 TRAIN] batch 1057/1515 loss=1.3943 elapsed=14m57s eta=6m29s
+2026-05-11 13:10:33 [INFO]   [F1 E01 TRAIN] batch 1208/1515 loss=1.3688 elapsed=17m05s eta=4m20s
+2026-05-11 13:12:40 [INFO]   [F1 E01 TRAIN] batch 1359/1515 loss=1.3482 elapsed=19m12s eta=2m12s
+2026-05-11 13:14:48 [INFO]   [F1 E01 TRAIN] batch 1510/1515 loss=1.3249 elapsed=21m20s eta=4s
+2026-05-11 13:14:52 [INFO]   [F1 E01 TRAIN] batch 1515/1515 loss=1.3247 elapsed=21m24s eta=0s
+2026-05-11 13:14:54 [INFO]   [F1 E01 VAL] batch    2/13 elapsed=2s
+2026-05-11 13:14:55 [INFO]   [F1 E01 VAL] batch    4/13 elapsed=2s
+2026-05-11 13:14:55 [INFO]   [F1 E01 VAL] batch    6/13 elapsed=3s
+2026-05-11 13:14:56 [INFO]   [F1 E01 VAL] batch    8/13 elapsed=3s
+2026-05-11 13:14:56 [INFO]   [F1 E01 VAL] batch   10/13 elapsed=4s
+2026-05-11 13:14:57 [INFO]   [F1 E01 VAL] batch   12/13 elapsed=4s
+2026-05-11 13:14:57 [INFO]   [F1 E01 VAL] batch   13/13 elapsed=4s
+2026-05-11 13:14:59 [INFO]   [F1 E01 EMA] batch    2/13 elapsed=2s
+2026-05-11 13:15:01 [INFO]   [F1 E01 EMA] batch    4/13 elapsed=3s
+2026-05-11 13:15:02 [INFO]   [F1 E01 EMA] batch    6/13 elapsed=4s
+2026-05-11 13:15:03 [INFO]   [F1 E01 EMA] batch    8/13 elapsed=6s
+2026-05-11 13:15:04 [INFO]   [F1 E01 EMA] batch   10/13 elapsed=7s
+2026-05-11 13:15:06 [INFO]   [F1 E01 EMA] batch   12/13 elapsed=8s
+2026-05-11 13:15:06 [INFO]   [F1 E01 EMA] batch   13/13 elapsed=8s
+2026-05-11 13:15:06 [INFO]   [BEST] F1 E01 train L=1.3247 F1=0.4241 | val[model] L=1.2715 F1=0.3847 | epoch=21m38s
+2026-05-11 13:15:07 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 13:15:07 [INFO]   -- Epoch 02/30 [warmup] lr=3.40e-05 --
+2026-05-11 13:17:16 [INFO]   [F1 E02 TRAIN] batch  151/1515 loss=1.3168 elapsed=2m08s eta=19m21s
+2026-05-11 13:19:22 [INFO]   [F1 E02 TRAIN] batch  302/1515 loss=1.1704 elapsed=4m15s eta=17m04s
+2026-05-11 13:21:28 [INFO]   [F1 E02 TRAIN] batch  453/1515 loss=1.0761 elapsed=6m21s eta=14m54s
+2026-05-11 13:23:35 [INFO]   [F1 E02 TRAIN] batch  604/1515 loss=1.0251 elapsed=8m27s eta=12m45s
+2026-05-11 13:25:41 [INFO]   [F1 E02 TRAIN] batch  755/1515 loss=0.9750 elapsed=10m34s eta=10m38s
+2026-05-11 13:27:48 [INFO]   [F1 E02 TRAIN] batch  906/1515 loss=0.9482 elapsed=12m41s eta=8m31s
+2026-05-11 13:29:55 [INFO]   [F1 E02 TRAIN] batch 1057/1515 loss=0.9319 elapsed=14m47s eta=6m24s
+2026-05-11 13:32:01 [INFO]   [F1 E02 TRAIN] batch 1208/1515 loss=0.9171 elapsed=16m53s eta=4m17s
+2026-05-11 13:34:08 [INFO]   [F1 E02 TRAIN] batch 1359/1515 loss=0.9011 elapsed=19m00s eta=2m10s
+2026-05-11 13:36:14 [INFO]   [F1 E02 TRAIN] batch 1510/1515 loss=0.8876 elapsed=21m07s eta=4s
+2026-05-11 13:36:19 [INFO]   [F1 E02 TRAIN] batch 1515/1515 loss=0.8867 elapsed=21m11s eta=0s
+2026-05-11 13:36:20 [INFO]   [F1 E02 VAL] batch    2/13 elapsed=1s
+2026-05-11 13:36:21 [INFO]   [F1 E02 VAL] batch    4/13 elapsed=2s
+2026-05-11 13:36:21 [INFO]   [F1 E02 VAL] batch    6/13 elapsed=2s
+2026-05-11 13:36:22 [INFO]   [F1 E02 VAL] batch    8/13 elapsed=3s
+2026-05-11 13:36:22 [INFO]   [F1 E02 VAL] batch   10/13 elapsed=3s
+2026-05-11 13:36:23 [INFO]   [F1 E02 VAL] batch   12/13 elapsed=4s
+2026-05-11 13:36:23 [INFO]   [F1 E02 VAL] batch   13/13 elapsed=4s
+2026-05-11 13:36:25 [INFO]   [F1 E02 EMA] batch    2/13 elapsed=2s
+2026-05-11 13:36:26 [INFO]   [F1 E02 EMA] batch    4/13 elapsed=3s
+2026-05-11 13:36:28 [INFO]   [F1 E02 EMA] batch    6/13 elapsed=4s
+2026-05-11 13:36:29 [INFO]   [F1 E02 EMA] batch    8/13 elapsed=5s
+2026-05-11 13:36:30 [INFO]   [F1 E02 EMA] batch   10/13 elapsed=6s
+2026-05-11 13:36:31 [INFO]   [F1 E02 EMA] batch   12/13 elapsed=8s
+2026-05-11 13:36:32 [INFO]   [F1 E02 EMA] batch   13/13 elapsed=8s
+2026-05-11 13:36:32 [INFO]   [BEST] F1 E02 train L=0.8867 F1=0.6734 | val[model] L=0.8705 F1=0.7244 | epoch=21m24s
+2026-05-11 13:36:33 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 13:36:33 [INFO]   -- Epoch 03/30 [warmup] lr=6.70e-05 --
+2026-05-11 13:38:41 [INFO]   [F1 E03 TRAIN] batch  151/1515 loss=0.7923 elapsed=2m07s eta=19m13s
+2026-05-11 13:40:48 [INFO]   [F1 E03 TRAIN] batch  302/1515 loss=0.8121 elapsed=4m14s eta=17m03s
+2026-05-11 13:42:54 [INFO]   [F1 E03 TRAIN] batch  453/1515 loss=0.8113 elapsed=6m21s eta=14m53s
+2026-05-11 13:45:01 [INFO]   [F1 E03 TRAIN] batch  604/1515 loss=0.7949 elapsed=8m27s eta=12m45s
+2026-05-11 13:47:07 [INFO]   [F1 E03 TRAIN] batch  755/1515 loss=0.7907 elapsed=10m33s eta=10m37s
+2026-05-11 13:49:13 [INFO]   [F1 E03 TRAIN] batch  906/1515 loss=0.7899 elapsed=12m39s eta=8m30s
+2026-05-11 13:51:20 [INFO]   [F1 E03 TRAIN] batch 1057/1515 loss=0.7878 elapsed=14m46s eta=6m24s
+2026-05-11 13:53:26 [INFO]   [F1 E03 TRAIN] batch 1208/1515 loss=0.7951 elapsed=16m52s eta=4m17s
+2026-05-11 13:55:32 [INFO]   [F1 E03 TRAIN] batch 1359/1515 loss=0.7907 elapsed=18m58s eta=2m10s
+2026-05-11 13:57:38 [INFO]   [F1 E03 TRAIN] batch 1510/1515 loss=0.7856 elapsed=21m04s eta=4s
+2026-05-11 13:57:42 [INFO]   [F1 E03 TRAIN] batch 1515/1515 loss=0.7854 elapsed=21m08s eta=0s
+2026-05-11 13:57:43 [INFO]   [F1 E03 VAL] batch    2/13 elapsed=1s
+2026-05-11 13:57:44 [INFO]   [F1 E03 VAL] batch    4/13 elapsed=1s
+2026-05-11 13:57:44 [INFO]   [F1 E03 VAL] batch    6/13 elapsed=2s
+2026-05-11 13:57:45 [INFO]   [F1 E03 VAL] batch    8/13 elapsed=2s
+2026-05-11 13:57:46 [INFO]   [F1 E03 VAL] batch   10/13 elapsed=3s
+2026-05-11 13:57:46 [INFO]   [F1 E03 VAL] batch   12/13 elapsed=3s
+2026-05-11 13:57:46 [INFO]   [F1 E03 VAL] batch   13/13 elapsed=4s
+2026-05-11 13:57:49 [INFO]   [F1 E03 EMA] batch    2/13 elapsed=2s
+2026-05-11 13:57:50 [INFO]   [F1 E03 EMA] batch    4/13 elapsed=3s
+2026-05-11 13:57:51 [INFO]   [F1 E03 EMA] batch    6/13 elapsed=4s
+2026-05-11 13:57:52 [INFO]   [F1 E03 EMA] batch    8/13 elapsed=5s
+2026-05-11 13:57:53 [INFO]   [F1 E03 EMA] batch   10/13 elapsed=7s
+2026-05-11 13:57:55 [INFO]   [F1 E03 EMA] batch   12/13 elapsed=8s
+2026-05-11 13:57:55 [INFO]   [F1 E03 EMA] batch   13/13 elapsed=8s
+2026-05-11 13:57:55 [INFO]   [----] F1 E03 train L=0.7854 F1=0.7304 | val[ema] L=0.9648 F1=0.7004 | epoch=21m21s
+2026-05-11 13:57:55 [INFO]   -- Epoch 04/30 [cosine] lr=1.00e-04 --
+2026-05-11 14:00:02 [INFO]   [F1 E04 TRAIN] batch  151/1515 loss=0.7527 elapsed=2m07s eta=19m09s
+2026-05-11 14:02:09 [INFO]   [F1 E04 TRAIN] batch  302/1515 loss=0.7286 elapsed=4m13s eta=16m58s
+2026-05-11 14:04:15 [INFO]   [F1 E04 TRAIN] batch  453/1515 loss=0.7351 elapsed=6m19s eta=14m49s
+2026-05-11 14:06:21 [INFO]   [F1 E04 TRAIN] batch  604/1515 loss=0.7268 elapsed=8m25s eta=12m42s
+2026-05-11 14:08:27 [INFO]   [F1 E04 TRAIN] batch  755/1515 loss=0.7231 elapsed=10m31s eta=10m35s
+2026-05-11 14:10:33 [INFO]   [F1 E04 TRAIN] batch  906/1515 loss=0.7273 elapsed=12m38s eta=8m29s
+2026-05-11 14:12:39 [INFO]   [F1 E04 TRAIN] batch 1057/1515 loss=0.7261 elapsed=14m44s eta=6m23s
+2026-05-11 14:14:45 [INFO]   [F1 E04 TRAIN] batch 1208/1515 loss=0.7198 elapsed=16m50s eta=4m16s
+2026-05-11 14:16:52 [INFO]   [F1 E04 TRAIN] batch 1359/1515 loss=0.7211 elapsed=18m56s eta=2m10s
+2026-05-11 14:18:58 [INFO]   [F1 E04 TRAIN] batch 1510/1515 loss=0.7205 elapsed=21m03s eta=4s
+2026-05-11 14:19:03 [INFO]   [F1 E04 TRAIN] batch 1515/1515 loss=0.7201 elapsed=21m07s eta=0s
+2026-05-11 14:19:04 [INFO]   [F1 E04 VAL] batch    2/13 elapsed=1s
+2026-05-11 14:19:05 [INFO]   [F1 E04 VAL] batch    4/13 elapsed=1s
+2026-05-11 14:19:05 [INFO]   [F1 E04 VAL] batch    6/13 elapsed=2s
+2026-05-11 14:19:06 [INFO]   [F1 E04 VAL] batch    8/13 elapsed=3s
+2026-05-11 14:19:06 [INFO]   [F1 E04 VAL] batch   10/13 elapsed=3s
+2026-05-11 14:19:07 [INFO]   [F1 E04 VAL] batch   12/13 elapsed=4s
+2026-05-11 14:19:07 [INFO]   [F1 E04 VAL] batch   13/13 elapsed=4s
+2026-05-11 14:19:09 [INFO]   [F1 E04 EMA] batch    2/13 elapsed=2s
+2026-05-11 14:19:10 [INFO]   [F1 E04 EMA] batch    4/13 elapsed=3s
+2026-05-11 14:19:12 [INFO]   [F1 E04 EMA] batch    6/13 elapsed=4s
+2026-05-11 14:19:13 [INFO]   [F1 E04 EMA] batch    8/13 elapsed=5s
+2026-05-11 14:19:14 [INFO]   [F1 E04 EMA] batch   10/13 elapsed=7s
+2026-05-11 14:19:15 [INFO]   [F1 E04 EMA] batch   12/13 elapsed=8s
+2026-05-11 14:19:16 [INFO]   [F1 E04 EMA] batch   13/13 elapsed=8s
+2026-05-11 14:19:16 [INFO]   [BEST] F1 E04 train L=0.7201 F1=0.7618 | val[ema] L=0.8697 F1=0.7508 | epoch=21m20s
+2026-05-11 14:19:17 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 14:19:17 [INFO]   -- Epoch 05/30 [cosine] lr=9.97e-05 --
+2026-05-11 14:21:25 [INFO]   [F1 E05 TRAIN] batch  151/1515 loss=0.5998 elapsed=2m07s eta=19m12s
+2026-05-11 14:23:31 [INFO]   [F1 E05 TRAIN] batch  302/1515 loss=0.6489 elapsed=4m14s eta=17m00s
+2026-05-11 14:25:38 [INFO]   [F1 E05 TRAIN] batch  453/1515 loss=0.6694 elapsed=6m20s eta=14m52s
+2026-05-11 14:27:44 [INFO]   [F1 E05 TRAIN] batch  604/1515 loss=0.6683 elapsed=8m26s eta=12m44s
+2026-05-11 14:29:50 [INFO]   [F1 E05 TRAIN] batch  755/1515 loss=0.6770 elapsed=10m33s eta=10m37s
+2026-05-11 14:31:57 [INFO]   [F1 E05 TRAIN] batch  906/1515 loss=0.6868 elapsed=12m39s eta=8m30s
+2026-05-11 14:34:03 [INFO]   [F1 E05 TRAIN] batch 1057/1515 loss=0.6806 elapsed=14m46s eta=6m23s
+2026-05-11 14:36:10 [INFO]   [F1 E05 TRAIN] batch 1208/1515 loss=0.6827 elapsed=16m52s eta=4m17s
+2026-05-11 14:38:16 [INFO]   [F1 E05 TRAIN] batch 1359/1515 loss=0.6857 elapsed=18m59s eta=2m10s
+2026-05-11 14:40:23 [INFO]   [F1 E05 TRAIN] batch 1510/1515 loss=0.6885 elapsed=21m05s eta=4s
+2026-05-11 14:40:27 [INFO]   [F1 E05 TRAIN] batch 1515/1515 loss=0.6885 elapsed=21m09s eta=0s
+2026-05-11 14:40:29 [INFO]   [F1 E05 VAL] batch    2/13 elapsed=1s
+2026-05-11 14:40:29 [INFO]   [F1 E05 VAL] batch    4/13 elapsed=2s
+2026-05-11 14:40:30 [INFO]   [F1 E05 VAL] batch    6/13 elapsed=2s
+2026-05-11 14:40:30 [INFO]   [F1 E05 VAL] batch    8/13 elapsed=3s
+2026-05-11 14:40:31 [INFO]   [F1 E05 VAL] batch   10/13 elapsed=3s
+2026-05-11 14:40:31 [INFO]   [F1 E05 VAL] batch   12/13 elapsed=4s
+2026-05-11 14:40:32 [INFO]   [F1 E05 VAL] batch   13/13 elapsed=4s
+2026-05-11 14:40:34 [INFO]   [F1 E05 EMA] batch    2/13 elapsed=2s
+2026-05-11 14:40:35 [INFO]   [F1 E05 EMA] batch    4/13 elapsed=3s
+2026-05-11 14:40:36 [INFO]   [F1 E05 EMA] batch    6/13 elapsed=4s
+2026-05-11 14:40:37 [INFO]   [F1 E05 EMA] batch    8/13 elapsed=5s
+2026-05-11 14:40:38 [INFO]   [F1 E05 EMA] batch   10/13 elapsed=6s
+2026-05-11 14:40:40 [INFO]   [F1 E05 EMA] batch   12/13 elapsed=8s
+2026-05-11 14:40:40 [INFO]   [F1 E05 EMA] batch   13/13 elapsed=8s
+2026-05-11 14:40:40 [INFO]   [BEST] F1 E05 train L=0.6885 F1=0.7716 | val[ema] L=0.8537 F1=0.7854 | epoch=21m22s
+2026-05-11 14:40:42 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 14:40:42 [INFO]   -- Epoch 06/30 [cosine] lr=9.87e-05 --
+2026-05-11 14:42:49 [INFO]   [F1 E06 TRAIN] batch  151/1515 loss=0.6832 elapsed=2m07s eta=19m13s
+2026-05-11 14:44:56 [INFO]   [F1 E06 TRAIN] batch  302/1515 loss=0.6515 elapsed=4m14s eta=17m02s
+2026-05-11 14:47:02 [INFO]   [F1 E06 TRAIN] batch  453/1515 loss=0.6653 elapsed=6m20s eta=14m52s
+2026-05-11 14:49:09 [INFO]   [F1 E06 TRAIN] batch  604/1515 loss=0.6731 elapsed=8m27s eta=12m44s
+2026-05-11 14:51:15 [INFO]   [F1 E06 TRAIN] batch  755/1515 loss=0.6747 elapsed=10m33s eta=10m37s
+2026-05-11 14:53:21 [INFO]   [F1 E06 TRAIN] batch  906/1515 loss=0.6767 elapsed=12m39s eta=8m30s
+2026-05-11 14:55:28 [INFO]   [F1 E06 TRAIN] batch 1057/1515 loss=0.6735 elapsed=14m46s eta=6m24s
+2026-05-11 14:57:35 [INFO]   [F1 E06 TRAIN] batch 1208/1515 loss=0.6700 elapsed=16m53s eta=4m17s
+2026-05-11 14:59:41 [INFO]   [F1 E06 TRAIN] batch 1359/1515 loss=0.6720 elapsed=18m59s eta=2m10s
+2026-05-11 15:01:48 [INFO]   [F1 E06 TRAIN] batch 1510/1515 loss=0.6706 elapsed=21m06s eta=4s
+2026-05-11 15:01:52 [INFO]   [F1 E06 TRAIN] batch 1515/1515 loss=0.6703 elapsed=21m10s eta=0s
+2026-05-11 15:01:54 [INFO]   [F1 E06 VAL] batch    2/13 elapsed=1s
+2026-05-11 15:01:54 [INFO]   [F1 E06 VAL] batch    4/13 elapsed=2s
+2026-05-11 15:01:55 [INFO]   [F1 E06 VAL] batch    6/13 elapsed=2s
+2026-05-11 15:01:55 [INFO]   [F1 E06 VAL] batch    8/13 elapsed=3s
+2026-05-11 15:01:56 [INFO]   [F1 E06 VAL] batch   10/13 elapsed=3s
+2026-05-11 15:01:56 [INFO]   [F1 E06 VAL] batch   12/13 elapsed=4s
+2026-05-11 15:01:57 [INFO]   [F1 E06 VAL] batch   13/13 elapsed=4s
+2026-05-11 15:01:59 [INFO]   [F1 E06 EMA] batch    2/13 elapsed=2s
+2026-05-11 15:02:00 [INFO]   [F1 E06 EMA] batch    4/13 elapsed=3s
+2026-05-11 15:02:01 [INFO]   [F1 E06 EMA] batch    6/13 elapsed=4s
+2026-05-11 15:02:02 [INFO]   [F1 E06 EMA] batch    8/13 elapsed=5s
+2026-05-11 15:02:04 [INFO]   [F1 E06 EMA] batch   10/13 elapsed=6s
+2026-05-11 15:02:05 [INFO]   [F1 E06 EMA] batch   12/13 elapsed=8s
+2026-05-11 15:02:05 [INFO]   [F1 E06 EMA] batch   13/13 elapsed=8s
+2026-05-11 15:02:05 [INFO]   [----] F1 E06 train L=0.6703 F1=0.7846 | val[ema] L=0.8472 F1=0.7796 | epoch=21m23s
+2026-05-11 15:02:05 [INFO]   -- Epoch 07/30 [cosine] lr=9.70e-05 --
+2026-05-11 15:04:16 [INFO]   [F1 E07 TRAIN] batch  151/1515 loss=0.6448 elapsed=2m10s eta=19m42s
+2026-05-11 15:06:23 [INFO]   [F1 E07 TRAIN] batch  302/1515 loss=0.6562 elapsed=4m17s eta=17m15s
+2026-05-11 15:08:29 [INFO]   [F1 E07 TRAIN] batch  453/1515 loss=0.6484 elapsed=6m24s eta=15m00s
+2026-05-11 15:10:36 [INFO]   [F1 E07 TRAIN] batch  604/1515 loss=0.6557 elapsed=8m30s eta=12m49s
+2026-05-11 15:12:42 [INFO]   [F1 E07 TRAIN] batch  755/1515 loss=0.6504 elapsed=10m36s eta=10m40s
+2026-05-11 15:14:48 [INFO]   [F1 E07 TRAIN] batch  906/1515 loss=0.6543 elapsed=12m43s eta=8m32s
+2026-05-11 15:16:55 [INFO]   [F1 E07 TRAIN] batch 1057/1515 loss=0.6546 elapsed=14m49s eta=6m25s
+2026-05-11 15:19:01 [INFO]   [F1 E07 TRAIN] batch 1208/1515 loss=0.6542 elapsed=16m56s eta=4m18s
+2026-05-11 15:21:08 [INFO]   [F1 E07 TRAIN] batch 1359/1515 loss=0.6557 elapsed=19m02s eta=2m11s
+2026-05-11 15:23:15 [INFO]   [F1 E07 TRAIN] batch 1510/1515 loss=0.6509 elapsed=21m09s eta=4s
+2026-05-11 15:23:19 [INFO]   [F1 E07 TRAIN] batch 1515/1515 loss=0.6508 elapsed=21m13s eta=0s
+2026-05-11 15:23:20 [INFO]   [F1 E07 VAL] batch    2/13 elapsed=1s
+2026-05-11 15:23:21 [INFO]   [F1 E07 VAL] batch    4/13 elapsed=1s
+2026-05-11 15:23:21 [INFO]   [F1 E07 VAL] batch    6/13 elapsed=2s
+2026-05-11 15:23:22 [INFO]   [F1 E07 VAL] batch    8/13 elapsed=2s
+2026-05-11 15:23:22 [INFO]   [F1 E07 VAL] batch   10/13 elapsed=3s
+2026-05-11 15:23:23 [INFO]   [F1 E07 VAL] batch   12/13 elapsed=4s
+2026-05-11 15:23:23 [INFO]   [F1 E07 VAL] batch   13/13 elapsed=4s
+2026-05-11 15:23:25 [INFO]   [F1 E07 EMA] batch    2/13 elapsed=1s
+2026-05-11 15:23:26 [INFO]   [F1 E07 EMA] batch    4/13 elapsed=3s
+2026-05-11 15:23:27 [INFO]   [F1 E07 EMA] batch    6/13 elapsed=4s
+2026-05-11 15:23:29 [INFO]   [F1 E07 EMA] batch    8/13 elapsed=5s
+2026-05-11 15:23:30 [INFO]   [F1 E07 EMA] batch   10/13 elapsed=6s
+2026-05-11 15:23:31 [INFO]   [F1 E07 EMA] batch   12/13 elapsed=8s
+2026-05-11 15:23:31 [INFO]   [F1 E07 EMA] batch   13/13 elapsed=8s
+2026-05-11 15:23:31 [INFO]   [----] F1 E07 train L=0.6508 F1=0.7994 | val[ema] L=0.8503 F1=0.7796 | epoch=21m26s
+2026-05-11 15:23:31 [INFO]   -- Epoch 08/30 [cosine] lr=9.47e-05 --
+2026-05-11 15:25:39 [INFO]   [F1 E08 TRAIN] batch  151/1515 loss=0.6873 elapsed=2m07s eta=19m14s
+2026-05-11 15:27:45 [INFO]   [F1 E08 TRAIN] batch  302/1515 loss=0.6579 elapsed=4m13s eta=16m59s
+2026-05-11 15:29:52 [INFO]   [F1 E08 TRAIN] batch  453/1515 loss=0.6614 elapsed=6m20s eta=14m51s
+2026-05-11 15:31:58 [INFO]   [F1 E08 TRAIN] batch  604/1515 loss=0.6592 elapsed=8m26s eta=12m44s
+2026-05-11 15:34:04 [INFO]   [F1 E08 TRAIN] batch  755/1515 loss=0.6590 elapsed=10m32s eta=10m37s
+2026-05-11 15:36:11 [INFO]   [F1 E08 TRAIN] batch  906/1515 loss=0.6548 elapsed=12m39s eta=8m30s
+2026-05-11 15:38:17 [INFO]   [F1 E08 TRAIN] batch 1057/1515 loss=0.6612 elapsed=14m45s eta=6m23s
+2026-05-11 15:40:23 [INFO]   [F1 E08 TRAIN] batch 1208/1515 loss=0.6526 elapsed=16m51s eta=4m17s
+2026-05-11 15:42:29 [INFO]   [F1 E08 TRAIN] batch 1359/1515 loss=0.6506 elapsed=18m57s eta=2m10s
+2026-05-11 15:44:35 [INFO]   [F1 E08 TRAIN] batch 1510/1515 loss=0.6445 elapsed=21m03s eta=4s
+2026-05-11 15:44:40 [INFO]   [F1 E08 TRAIN] batch 1515/1515 loss=0.6437 elapsed=21m08s eta=0s
+2026-05-11 15:44:41 [INFO]   [F1 E08 VAL] batch    2/13 elapsed=1s
+2026-05-11 15:44:42 [INFO]   [F1 E08 VAL] batch    4/13 elapsed=2s
+2026-05-11 15:44:42 [INFO]   [F1 E08 VAL] batch    6/13 elapsed=2s
+2026-05-11 15:44:43 [INFO]   [F1 E08 VAL] batch    8/13 elapsed=3s
+2026-05-11 15:44:43 [INFO]   [F1 E08 VAL] batch   10/13 elapsed=3s
+2026-05-11 15:44:44 [INFO]   [F1 E08 VAL] batch   12/13 elapsed=4s
+2026-05-11 15:44:44 [INFO]   [F1 E08 VAL] batch   13/13 elapsed=4s
+2026-05-11 15:44:46 [INFO]   [F1 E08 EMA] batch    2/13 elapsed=2s
+2026-05-11 15:44:47 [INFO]   [F1 E08 EMA] batch    4/13 elapsed=3s
+2026-05-11 15:44:48 [INFO]   [F1 E08 EMA] batch    6/13 elapsed=4s
+2026-05-11 15:44:50 [INFO]   [F1 E08 EMA] batch    8/13 elapsed=5s
+2026-05-11 15:44:51 [INFO]   [F1 E08 EMA] batch   10/13 elapsed=6s
+2026-05-11 15:44:52 [INFO]   [F1 E08 EMA] batch   12/13 elapsed=8s
+2026-05-11 15:44:52 [INFO]   [F1 E08 EMA] batch   13/13 elapsed=8s
+2026-05-11 15:44:52 [INFO]   [BEST] F1 E08 train L=0.6437 F1=0.7962 | val[model] L=0.8542 F1=0.8066 | epoch=21m20s
+2026-05-11 15:44:54 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 15:44:54 [INFO]   -- Epoch 09/30 [cosine] lr=9.18e-05 --
+2026-05-11 15:47:02 [INFO]   [F1 E09 TRAIN] batch  151/1515 loss=0.5827 elapsed=2m07s eta=19m11s
+2026-05-11 15:49:08 [INFO]   [F1 E09 TRAIN] batch  302/1515 loss=0.6313 elapsed=4m13s eta=16m59s
+2026-05-11 15:51:14 [INFO]   [F1 E09 TRAIN] batch  453/1515 loss=0.6071 elapsed=6m19s eta=14m50s
+2026-05-11 15:53:20 [INFO]   [F1 E09 TRAIN] batch  604/1515 loss=0.6233 elapsed=8m26s eta=12m43s
+2026-05-11 15:55:26 [INFO]   [F1 E09 TRAIN] batch  755/1515 loss=0.6222 elapsed=10m32s eta=10m36s
+2026-05-11 15:57:33 [INFO]   [F1 E09 TRAIN] batch  906/1515 loss=0.6252 elapsed=12m38s eta=8m29s
+2026-05-11 15:59:40 [INFO]   [F1 E09 TRAIN] batch 1057/1515 loss=0.6317 elapsed=14m45s eta=6m23s
+2026-05-11 16:01:47 [INFO]   [F1 E09 TRAIN] batch 1208/1515 loss=0.6394 elapsed=16m52s eta=4m17s
+2026-05-11 16:03:53 [INFO]   [F1 E09 TRAIN] batch 1359/1515 loss=0.6374 elapsed=18m58s eta=2m10s
+2026-05-11 16:06:00 [INFO]   [F1 E09 TRAIN] batch 1510/1515 loss=0.6371 elapsed=21m05s eta=4s
+2026-05-11 16:06:04 [INFO]   [F1 E09 TRAIN] batch 1515/1515 loss=0.6370 elapsed=21m09s eta=0s
+2026-05-11 16:06:05 [INFO]   [F1 E09 VAL] batch    2/13 elapsed=1s
+2026-05-11 16:06:06 [INFO]   [F1 E09 VAL] batch    4/13 elapsed=1s
+2026-05-11 16:06:06 [INFO]   [F1 E09 VAL] batch    6/13 elapsed=2s
+2026-05-11 16:06:07 [INFO]   [F1 E09 VAL] batch    8/13 elapsed=3s
+2026-05-11 16:06:07 [INFO]   [F1 E09 VAL] batch   10/13 elapsed=3s
+2026-05-11 16:06:08 [INFO]   [F1 E09 VAL] batch   12/13 elapsed=4s
+2026-05-11 16:06:08 [INFO]   [F1 E09 VAL] batch   13/13 elapsed=4s
+2026-05-11 16:06:10 [INFO]   [F1 E09 EMA] batch    2/13 elapsed=2s
+2026-05-11 16:06:11 [INFO]   [F1 E09 EMA] batch    4/13 elapsed=3s
+2026-05-11 16:06:13 [INFO]   [F1 E09 EMA] batch    6/13 elapsed=4s
+2026-05-11 16:06:14 [INFO]   [F1 E09 EMA] batch    8/13 elapsed=5s
+2026-05-11 16:06:15 [INFO]   [F1 E09 EMA] batch   10/13 elapsed=6s
+2026-05-11 16:06:16 [INFO]   [F1 E09 EMA] batch   12/13 elapsed=8s
+2026-05-11 16:06:17 [INFO]   [F1 E09 EMA] batch   13/13 elapsed=8s
+2026-05-11 16:06:17 [INFO]   [BEST] F1 E09 train L=0.6370 F1=0.7917 | val[model] L=0.8226 F1=0.8160 | epoch=21m22s
+2026-05-11 16:06:18 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 16:06:18 [INFO]   -- Epoch 10/30 [cosine] lr=8.83e-05 --
+2026-05-11 16:08:26 [INFO]   [F1 E10 TRAIN] batch  151/1515 loss=0.6419 elapsed=2m07s eta=19m11s
+2026-05-11 16:10:32 [INFO]   [F1 E10 TRAIN] batch  302/1515 loss=0.6390 elapsed=4m13s eta=16m59s
+2026-05-11 16:12:39 [INFO]   [F1 E10 TRAIN] batch  453/1515 loss=0.6352 elapsed=6m20s eta=14m51s

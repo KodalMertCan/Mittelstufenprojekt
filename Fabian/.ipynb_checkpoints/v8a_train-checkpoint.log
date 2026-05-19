@@ -1,0 +1,73 @@
+DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+Tag: T2  |  Architekturen: 1
+  - dinov2l: vit_large_patch14_dinov2.lvd142m @ 518px  |  BS=16*2  LR=0.0001
+Pseudo: True (pseudo_labels_t2_v7.csv)
+Validation: test_only  |  Loss: ce  |  EMA: True  |  Output: runs/v8a_t2
+<jemalloc>: Unsupported system page size
+Device: cuda
+  GPU 0: Tesla V100-SXM2-32GB (33.8 GB)
+  GPU 1: Tesla V100-SXM2-32GB (33.8 GB)
+  GPU 2: Tesla V100-SXM2-32GB (33.8 GB)
+  GPU 3: Tesla V100-SXM2-32GB (33.8 GB)
+Pseudo-Labels: 1000 hinzugefuegt
+  davon nach Klasse:
+    0 - Lateral_lying_left       200
+    1 - Lateral_lying_right      200
+    2 - Sitting                  200
+    3 - Standing                 200
+    4 - Sternal_lying            200
+
+Instanzen total: 24450  |  echt: 23450  |  pseudo: 1000
+Kameras (8):
+  pen1_orb_cam1               722 (3.0%)
+  pen1_orb_cam2              1488 (6.1%)
+  pen1_tur_cam1               631 (2.6%) (TEST)
+  pen1_tur_cam2              8194 (33.5%)
+  pen2_orb_cam1              2817 (11.5%)
+  pen2_orb_cam2               424 (1.7%) (TEST)
+  pen2_tur_cam1              9713 (39.7%)
+  pen2_tur_cam2               461 (1.9%) (TEST)
+Klassen (inkl. Pseudo):
+  0 - Lateral_lying_left      3283 (13.4%)
+  1 - Lateral_lying_right     3635 (14.9%)
+  2 - Sitting                  895 (3.7%)
+  3 - Standing               10128 (41.4%)
+  4 - Sternal_lying           6509 (26.6%)
+Heavy Augmentations definiert.
+STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+
+3 Folds:
+  Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+  Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+  Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+
+############################################################
+  ARCHITEKTUR 1/1: dinov2l (vit_large_patch14_dinov2.lvd142m)
+############################################################
+
+============================================================
+  [dinov2l] FOLD 1 / 3  (Val=pen1_tur_cam1)
+============================================================
+  Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+  Checkpoint existiert (val_f1=0.8633), skip
+
+============================================================
+  [dinov2l] FOLD 2 / 3  (Val=pen2_orb_cam2)
+============================================================
+  Train: 24330 (1000 pseudo) | Val: 120 | effBatch=32
+Traceback (most recent call last):
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8a_train.py", line 581, in <module>
+    model = model.to(DEVICE)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 927, in to
+    return self._apply(convert)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 579, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 579, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 602, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/nn/modules/module.py", line 925, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

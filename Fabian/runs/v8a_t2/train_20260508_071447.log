@@ -1,0 +1,708 @@
+2026-05-08 07:14:47 [INFO] === V8a Training gestartet ===
+2026-05-08 07:14:47 [INFO] Logfile : runs/v8a_t2/train_20260508_071447.log
+2026-05-08 07:14:47 [INFO] Stats   : runs/v8a_t2/stats_20260508_071447.csv
+2026-05-08 07:14:47 [INFO] PID     : 2120
+2026-05-08 07:14:47 [INFO] CWD     : /home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian
+2026-05-08 07:14:47 [INFO] Python  : 3.10.7
+2026-05-08 07:14:49 [INFO] DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+2026-05-08 07:14:49 [INFO] Device (Master): cuda:1  |  device_ids=[1, 0, 2, 3]
+2026-05-08 07:14:49 [INFO]   GPU 0: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-08 07:14:49 [INFO]   GPU 1: Tesla V100-SXM2-32GB (33.8 GB)  [MASTER]
+2026-05-08 07:14:49 [INFO]   GPU 2: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-08 07:14:49 [INFO]   GPU 3: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO] Daten laden
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO] Pseudo-Labels: 1000 hinzugefuegt
+2026-05-08 07:14:49 [INFO]   pseudo 0 - Lateral_lying_left       200
+2026-05-08 07:14:49 [INFO]   pseudo 1 - Lateral_lying_right      200
+2026-05-08 07:14:49 [INFO]   pseudo 2 - Sitting                  200
+2026-05-08 07:14:49 [INFO]   pseudo 3 - Standing                 200
+2026-05-08 07:14:49 [INFO]   pseudo 4 - Sternal_lying            200
+2026-05-08 07:14:49 [INFO] Instanzen total: 24450  echt: 23450  pseudo: 1000
+2026-05-08 07:14:49 [INFO]   klasse 0 - Lateral_lying_left      3283
+2026-05-08 07:14:49 [INFO]   klasse 1 - Lateral_lying_right     3635
+2026-05-08 07:14:49 [INFO]   klasse 2 - Sitting                  895
+2026-05-08 07:14:49 [INFO]   klasse 3 - Standing               10128
+2026-05-08 07:14:49 [INFO]   klasse 4 - Sternal_lying           6509
+2026-05-08 07:14:49 [INFO] STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+2026-05-08 07:14:49 [INFO] 
+3 Folds:
+2026-05-08 07:14:49 [INFO]   Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+2026-05-08 07:14:49 [INFO]   Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+2026-05-08 07:14:49 [INFO]   Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+2026-05-08 07:14:49 [INFO] ############################################################
+2026-05-08 07:14:49 [INFO]   ARCHITEKTUR 1/1: dinov2l (vit_large_patch14_dinov2.lvd142m)
+2026-05-08 07:14:49 [INFO] ############################################################
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO]   [dinov2l] FOLD 1/3  Val=pen1_tur_cam1
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO]   Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+2026-05-08 07:14:49 [INFO]   Checkpoint existiert (val_f1=0.8557), skip
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO]   [dinov2l] FOLD 2/3  Val=pen2_orb_cam2
+2026-05-08 07:14:49 [INFO] ============================================================
+2026-05-08 07:14:49 [INFO]   Train: 24330 (1000 pseudo) | Val: 120 | effBatch=32
+2026-05-08 07:14:55 [INFO] Loading pretrained weights from Hugging Face hub (timm/vit_large_patch14_dinov2.lvd142m)
+2026-05-08 07:14:55 [INFO] [timm/vit_large_patch14_dinov2.lvd142m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-05-08 07:14:55 [INFO] Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2026-05-08 07:14:56 [INFO]   Modell: vit_large_patch14_dinov2.lvd142m (304.4M Params)
+2026-05-08 07:14:56 [INFO]   nach Model-Init MEM: GPU0=0.0/0.0GB GPU1=1.2/1.2GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 07:14:56 [INFO]   EMA aktiv (decay=0.9995)
+2026-05-08 07:14:56 [INFO]   nach EMA-Init MEM: GPU0=0.0/0.0GB GPU1=2.4/2.4GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-08 07:14:56 [INFO]   CW: ['1.49', '1.35', '5.44', '0.48', '0.75']
+2026-05-08 07:14:56 [INFO]   ViT LLRD: 24 Layers, decay=0.75, 50 groups
+2026-05-08 07:14:56 [INFO]   -- Epoch 01/30 [warmup] lr=1.00e-06 --
+2026-05-08 07:17:06 [INFO]   [F2 E01 TRAIN] batch  152/1520 loss=1.7322 elapsed=2m09s eta=19m24s
+2026-05-08 07:19:01 [INFO]   [F2 E01 TRAIN] batch  304/1520 loss=1.6403 elapsed=4m05s eta=16m20s
+2026-05-08 07:20:56 [INFO]   [F2 E01 TRAIN] batch  456/1520 loss=1.5708 elapsed=5m59s eta=13m58s
+2026-05-08 07:22:51 [INFO]   [F2 E01 TRAIN] batch  608/1520 loss=1.5197 elapsed=7m54s eta=11m52s
+2026-05-08 07:24:47 [INFO]   [F2 E01 TRAIN] batch  760/1520 loss=1.4718 elapsed=9m50s eta=9m50s
+2026-05-08 07:26:41 [INFO]   [F2 E01 TRAIN] batch  912/1520 loss=1.4383 elapsed=11m44s eta=7m49s
+2026-05-08 07:28:35 [INFO]   [F2 E01 TRAIN] batch 1064/1520 loss=1.4066 elapsed=13m38s eta=5m50s
+2026-05-08 07:30:29 [INFO]   [F2 E01 TRAIN] batch 1216/1520 loss=1.3796 elapsed=15m32s eta=3m53s
+2026-05-08 07:32:23 [INFO]   [F2 E01 TRAIN] batch 1368/1520 loss=1.3522 elapsed=17m27s eta=1m56s
+2026-05-08 07:34:18 [INFO]   [F2 E01 TRAIN] batch 1520/1520 loss=1.3292 elapsed=19m21s eta=0s
+2026-05-08 07:34:20 [INFO]   [F2 E01 VAL] batch    1/8 elapsed=1s
+2026-05-08 07:34:20 [INFO]   [F2 E01 VAL] batch    2/8 elapsed=2s
+2026-05-08 07:34:20 [INFO]   [F2 E01 VAL] batch    3/8 elapsed=2s
+2026-05-08 07:34:20 [INFO]   [F2 E01 VAL] batch    4/8 elapsed=2s
+2026-05-08 07:34:21 [INFO]   [F2 E01 VAL] batch    5/8 elapsed=2s
+2026-05-08 07:34:21 [INFO]   [F2 E01 VAL] batch    6/8 elapsed=3s
+2026-05-08 07:34:21 [INFO]   [F2 E01 VAL] batch    7/8 elapsed=3s
+2026-05-08 07:34:21 [INFO]   [F2 E01 VAL] batch    8/8 elapsed=3s
+2026-05-08 07:34:23 [INFO]   [F2 E01 EMA] batch    1/8 elapsed=1s
+2026-05-08 07:34:24 [INFO]   [F2 E01 EMA] batch    2/8 elapsed=2s
+2026-05-08 07:34:24 [INFO]   [F2 E01 EMA] batch    3/8 elapsed=2s
+2026-05-08 07:34:25 [INFO]   [F2 E01 EMA] batch    4/8 elapsed=3s
+2026-05-08 07:34:26 [INFO]   [F2 E01 EMA] batch    5/8 elapsed=4s
+2026-05-08 07:34:26 [INFO]   [F2 E01 EMA] batch    6/8 elapsed=4s
+2026-05-08 07:34:27 [INFO]   [F2 E01 EMA] batch    7/8 elapsed=5s
+2026-05-08 07:34:27 [INFO]   [F2 E01 EMA] batch    8/8 elapsed=5s
+2026-05-08 07:34:27 [INFO]   [BEST] F2 E01 train L=1.3292 F1=0.4202 | val[model] L=1.3365 F1=0.4255 | epoch=19m30s
+2026-05-08 07:34:28 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 07:34:28 [INFO]   -- Epoch 02/30 [warmup] lr=3.40e-05 --
+2026-05-08 07:36:24 [INFO]   [F2 E02 TRAIN] batch  152/1520 loss=1.2940 elapsed=1m55s eta=17m18s
+2026-05-08 07:38:19 [INFO]   [F2 E02 TRAIN] batch  304/1520 loss=1.1593 elapsed=3m50s eta=15m21s
+2026-05-08 07:40:13 [INFO]   [F2 E02 TRAIN] batch  456/1520 loss=1.0825 elapsed=5m44s eta=13m23s
+2026-05-08 07:42:07 [INFO]   [F2 E02 TRAIN] batch  608/1520 loss=1.0382 elapsed=7m38s eta=11m28s
+2026-05-08 07:44:02 [INFO]   [F2 E02 TRAIN] batch  760/1520 loss=1.0006 elapsed=9m33s eta=9m33s
+2026-05-08 07:45:57 [INFO]   [F2 E02 TRAIN] batch  912/1520 loss=0.9725 elapsed=11m28s eta=7m38s
+2026-05-08 07:47:52 [INFO]   [F2 E02 TRAIN] batch 1064/1520 loss=0.9547 elapsed=13m23s eta=5m44s
+2026-05-08 07:49:46 [INFO]   [F2 E02 TRAIN] batch 1216/1520 loss=0.9350 elapsed=15m17s eta=3m49s
+2026-05-08 07:51:41 [INFO]   [F2 E02 TRAIN] batch 1368/1520 loss=0.9148 elapsed=17m12s eta=1m54s
+2026-05-08 07:53:36 [INFO]   [F2 E02 TRAIN] batch 1520/1520 loss=0.9012 elapsed=19m07s eta=0s
+2026-05-08 07:53:36 [INFO]   [F2 E02 VAL] batch    1/8 elapsed=0s
+2026-05-08 07:53:37 [INFO]   [F2 E02 VAL] batch    2/8 elapsed=1s
+2026-05-08 07:53:37 [INFO]   [F2 E02 VAL] batch    3/8 elapsed=1s
+2026-05-08 07:53:37 [INFO]   [F2 E02 VAL] batch    4/8 elapsed=1s
+2026-05-08 07:53:37 [INFO]   [F2 E02 VAL] batch    5/8 elapsed=1s
+2026-05-08 07:53:38 [INFO]   [F2 E02 VAL] batch    6/8 elapsed=2s
+2026-05-08 07:53:38 [INFO]   [F2 E02 VAL] batch    7/8 elapsed=2s
+2026-05-08 07:53:38 [INFO]   [F2 E02 VAL] batch    8/8 elapsed=2s
+2026-05-08 07:53:40 [INFO]   [F2 E02 EMA] batch    1/8 elapsed=1s
+2026-05-08 07:53:40 [INFO]   [F2 E02 EMA] batch    2/8 elapsed=2s
+2026-05-08 07:53:41 [INFO]   [F2 E02 EMA] batch    3/8 elapsed=2s
+2026-05-08 07:53:42 [INFO]   [F2 E02 EMA] batch    4/8 elapsed=3s
+2026-05-08 07:53:42 [INFO]   [F2 E02 EMA] batch    5/8 elapsed=3s
+2026-05-08 07:53:43 [INFO]   [F2 E02 EMA] batch    6/8 elapsed=4s
+2026-05-08 07:53:43 [INFO]   [F2 E02 EMA] batch    7/8 elapsed=5s
+2026-05-08 07:53:44 [INFO]   [F2 E02 EMA] batch    8/8 elapsed=5s
+2026-05-08 07:53:44 [INFO]   [BEST] F2 E02 train L=0.9012 F1=0.6686 | val[model] L=0.8589 F1=0.7893 | epoch=19m15s
+2026-05-08 07:53:45 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 07:53:45 [INFO]   -- Epoch 03/30 [warmup] lr=6.70e-05 --
+2026-05-08 07:55:42 [INFO]   [F2 E03 TRAIN] batch  152/1520 loss=0.7849 elapsed=1m56s eta=17m30s
+2026-05-08 07:57:36 [INFO]   [F2 E03 TRAIN] batch  304/1520 loss=0.7705 elapsed=3m51s eta=15m24s
+2026-05-08 07:59:32 [INFO]   [F2 E03 TRAIN] batch  456/1520 loss=0.7757 elapsed=5m46s eta=13m28s
+2026-05-08 08:01:27 [INFO]   [F2 E03 TRAIN] batch  608/1520 loss=0.7750 elapsed=7m42s eta=11m33s
+2026-05-08 08:03:23 [INFO]   [F2 E03 TRAIN] batch  760/1520 loss=0.7682 elapsed=9m37s eta=9m37s
+2026-05-08 08:05:19 [INFO]   [F2 E03 TRAIN] batch  912/1520 loss=0.7659 elapsed=11m33s eta=7m42s
+2026-05-08 08:07:16 [INFO]   [F2 E03 TRAIN] batch 1064/1520 loss=0.7696 elapsed=13m30s eta=5m47s
+2026-05-08 08:09:13 [INFO]   [F2 E03 TRAIN] batch 1216/1520 loss=0.7734 elapsed=15m27s eta=3m51s
+2026-05-08 08:11:08 [INFO]   [F2 E03 TRAIN] batch 1368/1520 loss=0.7731 elapsed=17m22s eta=1m55s
+2026-05-08 08:13:03 [INFO]   [F2 E03 TRAIN] batch 1520/1520 loss=0.7670 elapsed=19m18s eta=0s
+2026-05-08 08:13:04 [INFO]   [F2 E03 VAL] batch    1/8 elapsed=0s
+2026-05-08 08:13:05 [INFO]   [F2 E03 VAL] batch    2/8 elapsed=1s
+2026-05-08 08:13:05 [INFO]   [F2 E03 VAL] batch    3/8 elapsed=1s
+2026-05-08 08:13:05 [INFO]   [F2 E03 VAL] batch    4/8 elapsed=1s
+2026-05-08 08:13:05 [INFO]   [F2 E03 VAL] batch    5/8 elapsed=2s
+2026-05-08 08:13:06 [INFO]   [F2 E03 VAL] batch    6/8 elapsed=2s
+2026-05-08 08:13:06 [INFO]   [F2 E03 VAL] batch    7/8 elapsed=2s
+2026-05-08 08:13:06 [INFO]   [F2 E03 VAL] batch    8/8 elapsed=2s
+2026-05-08 08:13:08 [INFO]   [F2 E03 EMA] batch    1/8 elapsed=1s
+2026-05-08 08:13:09 [INFO]   [F2 E03 EMA] batch    2/8 elapsed=2s
+2026-05-08 08:13:09 [INFO]   [F2 E03 EMA] batch    3/8 elapsed=2s
+2026-05-08 08:13:10 [INFO]   [F2 E03 EMA] batch    4/8 elapsed=3s
+2026-05-08 08:13:10 [INFO]   [F2 E03 EMA] batch    5/8 elapsed=4s
+2026-05-08 08:13:11 [INFO]   [F2 E03 EMA] batch    6/8 elapsed=4s
+2026-05-08 08:13:12 [INFO]   [F2 E03 EMA] batch    7/8 elapsed=5s
+2026-05-08 08:13:12 [INFO]   [F2 E03 EMA] batch    8/8 elapsed=5s
+2026-05-08 08:13:12 [INFO]   [----] F2 E03 train L=0.7670 F1=0.7361 | val[model] L=0.8630 F1=0.7210 | epoch=19m26s
+2026-05-08 08:13:12 [INFO]   -- Epoch 04/30 [cosine] lr=1.00e-04 --
+2026-05-08 08:15:08 [INFO]   [F2 E04 TRAIN] batch  152/1520 loss=0.7390 elapsed=1m56s eta=17m28s
+2026-05-08 08:17:04 [INFO]   [F2 E04 TRAIN] batch  304/1520 loss=0.7292 elapsed=3m51s eta=15m26s
+2026-05-08 08:18:58 [INFO]   [F2 E04 TRAIN] batch  456/1520 loss=0.7420 elapsed=5m46s eta=13m28s
+2026-05-08 08:20:53 [INFO]   [F2 E04 TRAIN] batch  608/1520 loss=0.7380 elapsed=7m41s eta=11m31s
+2026-05-08 08:22:48 [INFO]   [F2 E04 TRAIN] batch  760/1520 loss=0.7397 elapsed=9m36s eta=9m36s
+2026-05-08 08:24:43 [INFO]   [F2 E04 TRAIN] batch  912/1520 loss=0.7414 elapsed=11m31s eta=7m40s
+2026-05-08 08:26:39 [INFO]   [F2 E04 TRAIN] batch 1064/1520 loss=0.7458 elapsed=13m26s eta=5m45s
+2026-05-08 08:28:34 [INFO]   [F2 E04 TRAIN] batch 1216/1520 loss=0.7397 elapsed=15m22s eta=3m50s
+2026-05-08 08:30:29 [INFO]   [F2 E04 TRAIN] batch 1368/1520 loss=0.7429 elapsed=17m17s eta=1m55s
+2026-05-08 08:32:25 [INFO]   [F2 E04 TRAIN] batch 1520/1520 loss=0.7386 elapsed=19m12s eta=0s
+2026-05-08 08:32:26 [INFO]   [F2 E04 VAL] batch    1/8 elapsed=1s
+2026-05-08 08:32:26 [INFO]   [F2 E04 VAL] batch    2/8 elapsed=1s
+2026-05-08 08:32:27 [INFO]   [F2 E04 VAL] batch    3/8 elapsed=1s
+2026-05-08 08:32:27 [INFO]   [F2 E04 VAL] batch    4/8 elapsed=2s
+2026-05-08 08:32:27 [INFO]   [F2 E04 VAL] batch    5/8 elapsed=2s
+2026-05-08 08:32:27 [INFO]   [F2 E04 VAL] batch    6/8 elapsed=2s
+2026-05-08 08:32:28 [INFO]   [F2 E04 VAL] batch    7/8 elapsed=2s
+2026-05-08 08:32:28 [INFO]   [F2 E04 VAL] batch    8/8 elapsed=3s
+2026-05-08 08:32:30 [INFO]   [F2 E04 EMA] batch    1/8 elapsed=1s
+2026-05-08 08:32:30 [INFO]   [F2 E04 EMA] batch    2/8 elapsed=2s
+2026-05-08 08:32:31 [INFO]   [F2 E04 EMA] batch    3/8 elapsed=3s
+2026-05-08 08:32:32 [INFO]   [F2 E04 EMA] batch    4/8 elapsed=3s
+2026-05-08 08:32:32 [INFO]   [F2 E04 EMA] batch    5/8 elapsed=4s
+2026-05-08 08:32:33 [INFO]   [F2 E04 EMA] batch    6/8 elapsed=4s
+2026-05-08 08:32:33 [INFO]   [F2 E04 EMA] batch    7/8 elapsed=5s
+2026-05-08 08:32:34 [INFO]   [F2 E04 EMA] batch    8/8 elapsed=5s
+2026-05-08 08:32:34 [INFO]   [BEST] F2 E04 train L=0.7386 F1=0.7488 | val[ema] L=0.6814 F1=0.8150 | epoch=19m21s
+2026-05-08 08:32:35 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 08:32:35 [INFO]   -- Epoch 05/30 [cosine] lr=9.97e-05 --
+2026-05-08 08:34:33 [INFO]   [F2 E05 TRAIN] batch  152/1520 loss=0.6571 elapsed=1m57s eta=17m37s
+2026-05-08 08:36:28 [INFO]   [F2 E05 TRAIN] batch  304/1520 loss=0.6825 elapsed=3m52s eta=15m31s
+2026-05-08 08:38:24 [INFO]   [F2 E05 TRAIN] batch  456/1520 loss=0.6827 elapsed=5m48s eta=13m33s
+2026-05-08 08:40:19 [INFO]   [F2 E05 TRAIN] batch  608/1520 loss=0.6783 elapsed=7m43s eta=11m35s
+2026-05-08 08:42:15 [INFO]   [F2 E05 TRAIN] batch  760/1520 loss=0.6815 elapsed=9m39s eta=9m39s
+2026-05-08 08:44:09 [INFO]   [F2 E05 TRAIN] batch  912/1520 loss=0.6937 elapsed=11m33s eta=7m42s
+2026-05-08 08:46:04 [INFO]   [F2 E05 TRAIN] batch 1064/1520 loss=0.6841 elapsed=13m28s eta=5m46s
+2026-05-08 08:48:00 [INFO]   [F2 E05 TRAIN] batch 1216/1520 loss=0.6783 elapsed=15m24s eta=3m51s
+2026-05-08 08:49:55 [INFO]   [F2 E05 TRAIN] batch 1368/1520 loss=0.6849 elapsed=17m19s eta=1m55s
+2026-05-08 08:51:51 [INFO]   [F2 E05 TRAIN] batch 1520/1520 loss=0.6880 elapsed=19m15s eta=0s
+2026-05-08 08:51:52 [INFO]   [F2 E05 VAL] batch    1/8 elapsed=0s
+2026-05-08 08:51:52 [INFO]   [F2 E05 VAL] batch    2/8 elapsed=1s
+2026-05-08 08:51:52 [INFO]   [F2 E05 VAL] batch    3/8 elapsed=1s
+2026-05-08 08:51:52 [INFO]   [F2 E05 VAL] batch    4/8 elapsed=1s
+2026-05-08 08:51:53 [INFO]   [F2 E05 VAL] batch    5/8 elapsed=2s
+2026-05-08 08:51:53 [INFO]   [F2 E05 VAL] batch    6/8 elapsed=2s
+2026-05-08 08:51:53 [INFO]   [F2 E05 VAL] batch    7/8 elapsed=2s
+2026-05-08 08:51:53 [INFO]   [F2 E05 VAL] batch    8/8 elapsed=2s
+2026-05-08 08:51:55 [INFO]   [F2 E05 EMA] batch    1/8 elapsed=1s
+2026-05-08 08:51:56 [INFO]   [F2 E05 EMA] batch    2/8 elapsed=2s
+2026-05-08 08:51:56 [INFO]   [F2 E05 EMA] batch    3/8 elapsed=2s
+2026-05-08 08:51:57 [INFO]   [F2 E05 EMA] batch    4/8 elapsed=3s
+2026-05-08 08:51:57 [INFO]   [F2 E05 EMA] batch    5/8 elapsed=3s
+2026-05-08 08:51:58 [INFO]   [F2 E05 EMA] batch    6/8 elapsed=4s
+2026-05-08 08:51:59 [INFO]   [F2 E05 EMA] batch    7/8 elapsed=5s
+2026-05-08 08:51:59 [INFO]   [F2 E05 EMA] batch    8/8 elapsed=5s
+2026-05-08 08:51:59 [INFO]   [BEST] F2 E05 train L=0.6880 F1=0.7746 | val[ema] L=0.5950 F1=0.9052 | epoch=19m23s
+2026-05-08 08:52:01 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 08:52:01 [INFO]   -- Epoch 06/30 [cosine] lr=9.87e-05 --
+2026-05-08 08:53:57 [INFO]   [F2 E06 TRAIN] batch  152/1520 loss=0.7028 elapsed=1m56s eta=17m30s
+2026-05-08 08:55:52 [INFO]   [F2 E06 TRAIN] batch  304/1520 loss=0.6925 elapsed=3m51s eta=15m25s
+2026-05-08 08:57:47 [INFO]   [F2 E06 TRAIN] batch  456/1520 loss=0.6772 elapsed=5m46s eta=13m28s
+2026-05-08 08:59:42 [INFO]   [F2 E06 TRAIN] batch  608/1520 loss=0.6922 elapsed=7m41s eta=11m32s
+2026-05-08 09:01:37 [INFO]   [F2 E06 TRAIN] batch  760/1520 loss=0.6844 elapsed=9m36s eta=9m36s
+2026-05-08 09:03:32 [INFO]   [F2 E06 TRAIN] batch  912/1520 loss=0.6870 elapsed=11m31s eta=7m40s
+2026-05-08 09:05:27 [INFO]   [F2 E06 TRAIN] batch 1064/1520 loss=0.6827 elapsed=13m26s eta=5m45s
+2026-05-08 09:07:22 [INFO]   [F2 E06 TRAIN] batch 1216/1520 loss=0.6786 elapsed=15m21s eta=3m50s
+2026-05-08 09:09:18 [INFO]   [F2 E06 TRAIN] batch 1368/1520 loss=0.6754 elapsed=17m17s eta=1m55s
+2026-05-08 09:11:14 [INFO]   [F2 E06 TRAIN] batch 1520/1520 loss=0.6757 elapsed=19m13s eta=0s
+2026-05-08 09:11:15 [INFO]   [F2 E06 VAL] batch    1/8 elapsed=0s
+2026-05-08 09:11:15 [INFO]   [F2 E06 VAL] batch    2/8 elapsed=1s
+2026-05-08 09:11:16 [INFO]   [F2 E06 VAL] batch    3/8 elapsed=1s
+2026-05-08 09:11:16 [INFO]   [F2 E06 VAL] batch    4/8 elapsed=1s
+2026-05-08 09:11:16 [INFO]   [F2 E06 VAL] batch    5/8 elapsed=1s
+2026-05-08 09:11:16 [INFO]   [F2 E06 VAL] batch    6/8 elapsed=2s
+2026-05-08 09:11:17 [INFO]   [F2 E06 VAL] batch    7/8 elapsed=2s
+2026-05-08 09:11:17 [INFO]   [F2 E06 VAL] batch    8/8 elapsed=2s
+2026-05-08 09:11:19 [INFO]   [F2 E06 EMA] batch    1/8 elapsed=1s
+2026-05-08 09:11:19 [INFO]   [F2 E06 EMA] batch    2/8 elapsed=2s
+2026-05-08 09:11:20 [INFO]   [F2 E06 EMA] batch    3/8 elapsed=3s
+2026-05-08 09:11:21 [INFO]   [F2 E06 EMA] batch    4/8 elapsed=3s
+2026-05-08 09:11:21 [INFO]   [F2 E06 EMA] batch    5/8 elapsed=4s
+2026-05-08 09:11:22 [INFO]   [F2 E06 EMA] batch    6/8 elapsed=4s
+2026-05-08 09:11:23 [INFO]   [F2 E06 EMA] batch    7/8 elapsed=5s
+2026-05-08 09:11:23 [INFO]   [F2 E06 EMA] batch    8/8 elapsed=5s
+2026-05-08 09:11:23 [INFO]   [BEST] F2 E06 train L=0.6757 F1=0.7867 | val[ema] L=0.5477 F1=0.9473 | epoch=19m22s
+2026-05-08 09:11:24 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 09:11:24 [INFO]   -- Epoch 07/30 [cosine] lr=9.70e-05 --
+2026-05-08 09:13:21 [INFO]   [F2 E07 TRAIN] batch  152/1520 loss=0.6583 elapsed=1m56s eta=17m30s
+2026-05-08 09:15:16 [INFO]   [F2 E07 TRAIN] batch  304/1520 loss=0.6771 elapsed=3m51s eta=15m27s
+2026-05-08 09:17:11 [INFO]   [F2 E07 TRAIN] batch  456/1520 loss=0.6666 elapsed=5m46s eta=13m29s
+2026-05-08 09:19:07 [INFO]   [F2 E07 TRAIN] batch  608/1520 loss=0.6683 elapsed=7m42s eta=11m33s
+2026-05-08 09:21:02 [INFO]   [F2 E07 TRAIN] batch  760/1520 loss=0.6682 elapsed=9m37s eta=9m37s
+2026-05-08 09:22:57 [INFO]   [F2 E07 TRAIN] batch  912/1520 loss=0.6675 elapsed=11m32s eta=7m41s
+2026-05-08 09:24:52 [INFO]   [F2 E07 TRAIN] batch 1064/1520 loss=0.6636 elapsed=13m27s eta=5m46s
+2026-05-08 09:26:48 [INFO]   [F2 E07 TRAIN] batch 1216/1520 loss=0.6612 elapsed=15m23s eta=3m50s
+2026-05-08 09:28:43 [INFO]   [F2 E07 TRAIN] batch 1368/1520 loss=0.6574 elapsed=17m18s eta=1m55s
+2026-05-08 09:30:38 [INFO]   [F2 E07 TRAIN] batch 1520/1520 loss=0.6583 elapsed=19m13s eta=0s
+2026-05-08 09:30:39 [INFO]   [F2 E07 VAL] batch    1/8 elapsed=0s
+2026-05-08 09:30:39 [INFO]   [F2 E07 VAL] batch    2/8 elapsed=1s
+2026-05-08 09:30:39 [INFO]   [F2 E07 VAL] batch    3/8 elapsed=1s
+2026-05-08 09:30:40 [INFO]   [F2 E07 VAL] batch    4/8 elapsed=1s
+2026-05-08 09:30:40 [INFO]   [F2 E07 VAL] batch    5/8 elapsed=2s
+2026-05-08 09:30:40 [INFO]   [F2 E07 VAL] batch    6/8 elapsed=2s
+2026-05-08 09:30:41 [INFO]   [F2 E07 VAL] batch    7/8 elapsed=2s
+2026-05-08 09:30:41 [INFO]   [F2 E07 VAL] batch    8/8 elapsed=2s
+2026-05-08 09:30:42 [INFO]   [F2 E07 EMA] batch    1/8 elapsed=1s
+2026-05-08 09:30:43 [INFO]   [F2 E07 EMA] batch    2/8 elapsed=2s
+2026-05-08 09:30:44 [INFO]   [F2 E07 EMA] batch    3/8 elapsed=2s
+2026-05-08 09:30:44 [INFO]   [F2 E07 EMA] batch    4/8 elapsed=3s
+2026-05-08 09:30:45 [INFO]   [F2 E07 EMA] batch    5/8 elapsed=3s
+2026-05-08 09:30:45 [INFO]   [F2 E07 EMA] batch    6/8 elapsed=4s
+2026-05-08 09:30:46 [INFO]   [F2 E07 EMA] batch    7/8 elapsed=5s
+2026-05-08 09:30:46 [INFO]   [F2 E07 EMA] batch    8/8 elapsed=5s
+2026-05-08 09:30:46 [INFO]   [----] F2 E07 train L=0.6583 F1=0.7925 | val[ema] L=0.5296 F1=0.9473 | epoch=19m21s
+2026-05-08 09:30:46 [INFO]   -- Epoch 08/30 [cosine] lr=9.47e-05 --
+2026-05-08 09:32:43 [INFO]   [F2 E08 TRAIN] batch  152/1520 loss=0.6206 elapsed=1m56s eta=17m28s
+2026-05-08 09:34:38 [INFO]   [F2 E08 TRAIN] batch  304/1520 loss=0.6420 elapsed=3m51s eta=15m25s
+2026-05-08 09:36:33 [INFO]   [F2 E08 TRAIN] batch  456/1520 loss=0.6557 elapsed=5m46s eta=13m29s
+2026-05-08 09:38:28 [INFO]   [F2 E08 TRAIN] batch  608/1520 loss=0.6426 elapsed=7m41s eta=11m32s
+2026-05-08 09:40:23 [INFO]   [F2 E08 TRAIN] batch  760/1520 loss=0.6470 elapsed=9m36s eta=9m36s
+2026-05-08 09:42:19 [INFO]   [F2 E08 TRAIN] batch  912/1520 loss=0.6503 elapsed=11m32s eta=7m41s
+2026-05-08 09:44:14 [INFO]   [F2 E08 TRAIN] batch 1064/1520 loss=0.6524 elapsed=13m27s eta=5m46s
+2026-05-08 09:46:09 [INFO]   [F2 E08 TRAIN] batch 1216/1520 loss=0.6497 elapsed=15m22s eta=3m50s
+2026-05-08 09:48:04 [INFO]   [F2 E08 TRAIN] batch 1368/1520 loss=0.6514 elapsed=17m17s eta=1m55s
+2026-05-08 09:50:00 [INFO]   [F2 E08 TRAIN] batch 1520/1520 loss=0.6450 elapsed=19m13s eta=0s
+2026-05-08 09:50:01 [INFO]   [F2 E08 VAL] batch    1/8 elapsed=0s
+2026-05-08 09:50:01 [INFO]   [F2 E08 VAL] batch    2/8 elapsed=1s
+2026-05-08 09:50:01 [INFO]   [F2 E08 VAL] batch    3/8 elapsed=1s
+2026-05-08 09:50:01 [INFO]   [F2 E08 VAL] batch    4/8 elapsed=1s
+2026-05-08 09:50:02 [INFO]   [F2 E08 VAL] batch    5/8 elapsed=1s
+2026-05-08 09:50:02 [INFO]   [F2 E08 VAL] batch    6/8 elapsed=2s
+2026-05-08 09:50:02 [INFO]   [F2 E08 VAL] batch    7/8 elapsed=2s
+2026-05-08 09:50:02 [INFO]   [F2 E08 VAL] batch    8/8 elapsed=2s
+2026-05-08 09:50:04 [INFO]   [F2 E08 EMA] batch    1/8 elapsed=1s
+2026-05-08 09:50:04 [INFO]   [F2 E08 EMA] batch    2/8 elapsed=2s
+2026-05-08 09:50:05 [INFO]   [F2 E08 EMA] batch    3/8 elapsed=2s
+2026-05-08 09:50:06 [INFO]   [F2 E08 EMA] batch    4/8 elapsed=3s
+2026-05-08 09:50:06 [INFO]   [F2 E08 EMA] batch    5/8 elapsed=3s
+2026-05-08 09:50:07 [INFO]   [F2 E08 EMA] batch    6/8 elapsed=4s
+2026-05-08 09:50:08 [INFO]   [F2 E08 EMA] batch    7/8 elapsed=5s
+2026-05-08 09:50:08 [INFO]   [F2 E08 EMA] batch    8/8 elapsed=5s
+2026-05-08 09:50:08 [INFO]   [----] F2 E08 train L=0.6450 F1=0.7925 | val[ema] L=0.5199 F1=0.9473 | epoch=19m21s
+2026-05-08 09:50:08 [INFO]   -- Epoch 09/30 [cosine] lr=9.18e-05 --
+2026-05-08 09:52:03 [INFO]   [F2 E09 TRAIN] batch  152/1520 loss=0.6508 elapsed=1m55s eta=17m16s
+2026-05-08 09:53:57 [INFO]   [F2 E09 TRAIN] batch  304/1520 loss=0.6606 elapsed=3m49s eta=15m17s
+2026-05-08 09:55:52 [INFO]   [F2 E09 TRAIN] batch  456/1520 loss=0.6317 elapsed=5m43s eta=13m21s
+2026-05-08 09:57:46 [INFO]   [F2 E09 TRAIN] batch  608/1520 loss=0.6310 elapsed=7m37s eta=11m26s
+2026-05-08 09:59:41 [INFO]   [F2 E09 TRAIN] batch  760/1520 loss=0.6375 elapsed=9m33s eta=9m33s
+2026-05-08 10:01:37 [INFO]   [F2 E09 TRAIN] batch  912/1520 loss=0.6459 elapsed=11m29s eta=7m39s
+2026-05-08 10:03:32 [INFO]   [F2 E09 TRAIN] batch 1064/1520 loss=0.6475 elapsed=13m24s eta=5m44s
+2026-05-08 10:05:27 [INFO]   [F2 E09 TRAIN] batch 1216/1520 loss=0.6495 elapsed=15m18s eta=3m49s
+2026-05-08 10:07:22 [INFO]   [F2 E09 TRAIN] batch 1368/1520 loss=0.6464 elapsed=17m14s eta=1m54s
+2026-05-08 10:09:17 [INFO]   [F2 E09 TRAIN] batch 1520/1520 loss=0.6495 elapsed=19m08s eta=0s
+2026-05-08 10:09:17 [INFO]   [F2 E09 VAL] batch    1/8 elapsed=0s
+2026-05-08 10:09:18 [INFO]   [F2 E09 VAL] batch    2/8 elapsed=1s
+2026-05-08 10:09:18 [INFO]   [F2 E09 VAL] batch    3/8 elapsed=1s
+2026-05-08 10:09:18 [INFO]   [F2 E09 VAL] batch    4/8 elapsed=1s
+2026-05-08 10:09:19 [INFO]   [F2 E09 VAL] batch    5/8 elapsed=1s
+2026-05-08 10:09:19 [INFO]   [F2 E09 VAL] batch    6/8 elapsed=2s
+2026-05-08 10:09:19 [INFO]   [F2 E09 VAL] batch    7/8 elapsed=2s
+2026-05-08 10:09:19 [INFO]   [F2 E09 VAL] batch    8/8 elapsed=2s
+2026-05-08 10:09:21 [INFO]   [F2 E09 EMA] batch    1/8 elapsed=1s
+2026-05-08 10:09:21 [INFO]   [F2 E09 EMA] batch    2/8 elapsed=2s
+2026-05-08 10:09:22 [INFO]   [F2 E09 EMA] batch    3/8 elapsed=2s
+2026-05-08 10:09:23 [INFO]   [F2 E09 EMA] batch    4/8 elapsed=3s
+2026-05-08 10:09:23 [INFO]   [F2 E09 EMA] batch    5/8 elapsed=3s
+2026-05-08 10:09:24 [INFO]   [F2 E09 EMA] batch    6/8 elapsed=4s
+2026-05-08 10:09:24 [INFO]   [F2 E09 EMA] batch    7/8 elapsed=5s
+2026-05-08 10:09:25 [INFO]   [F2 E09 EMA] batch    8/8 elapsed=5s
+2026-05-08 10:09:25 [INFO]   [----] F2 E09 train L=0.6495 F1=0.7939 | val[ema] L=0.5184 F1=0.9420 | epoch=19m16s
+2026-05-08 10:09:25 [INFO]   -- Epoch 10/30 [cosine] lr=8.83e-05 --
+2026-05-08 10:11:21 [INFO]   [F2 E10 TRAIN] batch  152/1520 loss=0.6393 elapsed=1m55s eta=17m23s
+2026-05-08 10:13:15 [INFO]   [F2 E10 TRAIN] batch  304/1520 loss=0.6411 elapsed=3m50s eta=15m22s
+2026-05-08 10:15:11 [INFO]   [F2 E10 TRAIN] batch  456/1520 loss=0.6358 elapsed=5m46s eta=13m27s
+2026-05-08 10:17:05 [INFO]   [F2 E10 TRAIN] batch  608/1520 loss=0.6346 elapsed=7m40s eta=11m30s
+2026-05-08 10:19:00 [INFO]   [F2 E10 TRAIN] batch  760/1520 loss=0.6221 elapsed=9m35s eta=9m35s
+2026-05-08 10:20:55 [INFO]   [F2 E10 TRAIN] batch  912/1520 loss=0.6195 elapsed=11m30s eta=7m40s
+2026-05-08 10:22:50 [INFO]   [F2 E10 TRAIN] batch 1064/1520 loss=0.6196 elapsed=13m25s eta=5m45s
+2026-05-08 10:24:46 [INFO]   [F2 E10 TRAIN] batch 1216/1520 loss=0.6185 elapsed=15m21s eta=3m50s
+2026-05-08 10:26:41 [INFO]   [F2 E10 TRAIN] batch 1368/1520 loss=0.6208 elapsed=17m16s eta=1m55s
+2026-05-08 10:28:37 [INFO]   [F2 E10 TRAIN] batch 1520/1520 loss=0.6227 elapsed=19m11s eta=0s
+2026-05-08 10:28:37 [INFO]   [F2 E10 VAL] batch    1/8 elapsed=0s
+2026-05-08 10:28:38 [INFO]   [F2 E10 VAL] batch    2/8 elapsed=1s
+2026-05-08 10:28:38 [INFO]   [F2 E10 VAL] batch    3/8 elapsed=1s
+2026-05-08 10:28:38 [INFO]   [F2 E10 VAL] batch    4/8 elapsed=1s
+2026-05-08 10:28:38 [INFO]   [F2 E10 VAL] batch    5/8 elapsed=1s
+2026-05-08 10:28:39 [INFO]   [F2 E10 VAL] batch    6/8 elapsed=2s
+2026-05-08 10:28:39 [INFO]   [F2 E10 VAL] batch    7/8 elapsed=2s
+2026-05-08 10:28:39 [INFO]   [F2 E10 VAL] batch    8/8 elapsed=2s
+2026-05-08 10:28:41 [INFO]   [F2 E10 EMA] batch    1/8 elapsed=1s
+2026-05-08 10:28:41 [INFO]   [F2 E10 EMA] batch    2/8 elapsed=2s
+2026-05-08 10:28:42 [INFO]   [F2 E10 EMA] batch    3/8 elapsed=2s
+2026-05-08 10:28:42 [INFO]   [F2 E10 EMA] batch    4/8 elapsed=3s
+2026-05-08 10:28:43 [INFO]   [F2 E10 EMA] batch    5/8 elapsed=3s
+2026-05-08 10:28:44 [INFO]   [F2 E10 EMA] batch    6/8 elapsed=4s
+2026-05-08 10:28:44 [INFO]   [F2 E10 EMA] batch    7/8 elapsed=5s
+2026-05-08 10:28:45 [INFO]   [F2 E10 EMA] batch    8/8 elapsed=5s
+2026-05-08 10:28:45 [INFO]   [----] F2 E10 train L=0.6227 F1=0.7846 | val[ema] L=0.5324 F1=0.9349 | epoch=19m19s
+2026-05-08 10:28:45 [INFO]   -- Epoch 11/30 [cosine] lr=8.43e-05 --
+2026-05-08 10:30:41 [INFO]   [F2 E11 TRAIN] batch  152/1520 loss=0.5862 elapsed=1m56s eta=17m31s
+2026-05-08 10:32:37 [INFO]   [F2 E11 TRAIN] batch  304/1520 loss=0.5870 elapsed=3m52s eta=15m29s
+2026-05-08 10:34:32 [INFO]   [F2 E11 TRAIN] batch  456/1520 loss=0.5894 elapsed=5m47s eta=13m30s
+2026-05-08 10:36:28 [INFO]   [F2 E11 TRAIN] batch  608/1520 loss=0.5901 elapsed=7m43s eta=11m34s
+2026-05-08 10:38:23 [INFO]   [F2 E11 TRAIN] batch  760/1520 loss=0.5879 elapsed=9m38s eta=9m38s
+2026-05-08 10:40:19 [INFO]   [F2 E11 TRAIN] batch  912/1520 loss=0.5902 elapsed=11m34s eta=7m42s
+2026-05-08 10:42:14 [INFO]   [F2 E11 TRAIN] batch 1064/1520 loss=0.5908 elapsed=13m28s eta=5m46s
+2026-05-08 10:44:09 [INFO]   [F2 E11 TRAIN] batch 1216/1520 loss=0.5968 elapsed=15m23s eta=3m50s
+2026-05-08 10:46:04 [INFO]   [F2 E11 TRAIN] batch 1368/1520 loss=0.5994 elapsed=17m18s eta=1m55s
+2026-05-08 10:47:59 [INFO]   [F2 E11 TRAIN] batch 1520/1520 loss=0.6018 elapsed=19m14s eta=0s
+2026-05-08 10:48:00 [INFO]   [F2 E11 VAL] batch    1/8 elapsed=0s
+2026-05-08 10:48:00 [INFO]   [F2 E11 VAL] batch    2/8 elapsed=1s
+2026-05-08 10:48:00 [INFO]   [F2 E11 VAL] batch    3/8 elapsed=1s
+2026-05-08 10:48:00 [INFO]   [F2 E11 VAL] batch    4/8 elapsed=1s
+2026-05-08 10:48:01 [INFO]   [F2 E11 VAL] batch    5/8 elapsed=1s
+2026-05-08 10:48:01 [INFO]   [F2 E11 VAL] batch    6/8 elapsed=2s
+2026-05-08 10:48:01 [INFO]   [F2 E11 VAL] batch    7/8 elapsed=2s
+2026-05-08 10:48:01 [INFO]   [F2 E11 VAL] batch    8/8 elapsed=2s
+2026-05-08 10:48:03 [INFO]   [F2 E11 EMA] batch    1/8 elapsed=1s
+2026-05-08 10:48:03 [INFO]   [F2 E11 EMA] batch    2/8 elapsed=2s
+2026-05-08 10:48:04 [INFO]   [F2 E11 EMA] batch    3/8 elapsed=2s
+2026-05-08 10:48:05 [INFO]   [F2 E11 EMA] batch    4/8 elapsed=3s
+2026-05-08 10:48:05 [INFO]   [F2 E11 EMA] batch    5/8 elapsed=3s
+2026-05-08 10:48:06 [INFO]   [F2 E11 EMA] batch    6/8 elapsed=4s
+2026-05-08 10:48:06 [INFO]   [F2 E11 EMA] batch    7/8 elapsed=5s
+2026-05-08 10:48:07 [INFO]   [F2 E11 EMA] batch    8/8 elapsed=5s
+2026-05-08 10:48:07 [INFO]   [----] F2 E11 train L=0.6018 F1=0.8113 | val[ema] L=0.5283 F1=0.9398 | epoch=19m22s
+2026-05-08 10:48:07 [INFO]   -- Epoch 12/30 [cosine] lr=7.99e-05 --
+2026-05-08 10:50:03 [INFO]   [F2 E12 TRAIN] batch  152/1520 loss=0.5862 elapsed=1m56s eta=17m29s
+2026-05-08 10:51:58 [INFO]   [F2 E12 TRAIN] batch  304/1520 loss=0.6103 elapsed=3m51s eta=15m24s
+2026-05-08 10:53:53 [INFO]   [F2 E12 TRAIN] batch  456/1520 loss=0.6125 elapsed=5m46s eta=13m28s
+2026-05-08 10:55:49 [INFO]   [F2 E12 TRAIN] batch  608/1520 loss=0.6073 elapsed=7m42s eta=11m33s
+2026-05-08 10:57:45 [INFO]   [F2 E12 TRAIN] batch  760/1520 loss=0.6024 elapsed=9m37s eta=9m37s
+2026-05-08 10:59:40 [INFO]   [F2 E12 TRAIN] batch  912/1520 loss=0.6032 elapsed=11m33s eta=7m42s
+2026-05-08 11:01:36 [INFO]   [F2 E12 TRAIN] batch 1064/1520 loss=0.6084 elapsed=13m29s eta=5m46s
+2026-05-08 11:03:32 [INFO]   [F2 E12 TRAIN] batch 1216/1520 loss=0.6064 elapsed=15m24s eta=3m51s
+2026-05-08 11:05:27 [INFO]   [F2 E12 TRAIN] batch 1368/1520 loss=0.6058 elapsed=17m20s eta=1m55s
+2026-05-08 11:07:22 [INFO]   [F2 E12 TRAIN] batch 1520/1520 loss=0.6049 elapsed=19m15s eta=0s
+2026-05-08 11:07:23 [INFO]   [F2 E12 VAL] batch    1/8 elapsed=0s
+2026-05-08 11:07:23 [INFO]   [F2 E12 VAL] batch    2/8 elapsed=1s
+2026-05-08 11:07:23 [INFO]   [F2 E12 VAL] batch    3/8 elapsed=1s
+2026-05-08 11:07:24 [INFO]   [F2 E12 VAL] batch    4/8 elapsed=1s
+2026-05-08 11:07:24 [INFO]   [F2 E12 VAL] batch    5/8 elapsed=1s
+2026-05-08 11:07:24 [INFO]   [F2 E12 VAL] batch    6/8 elapsed=2s
+2026-05-08 11:07:24 [INFO]   [F2 E12 VAL] batch    7/8 elapsed=2s
+2026-05-08 11:07:25 [INFO]   [F2 E12 VAL] batch    8/8 elapsed=2s
+2026-05-08 11:07:26 [INFO]   [F2 E12 EMA] batch    1/8 elapsed=1s
+2026-05-08 11:07:27 [INFO]   [F2 E12 EMA] batch    2/8 elapsed=2s
+2026-05-08 11:07:27 [INFO]   [F2 E12 EMA] batch    3/8 elapsed=2s
+2026-05-08 11:07:28 [INFO]   [F2 E12 EMA] batch    4/8 elapsed=3s
+2026-05-08 11:07:29 [INFO]   [F2 E12 EMA] batch    5/8 elapsed=3s
+2026-05-08 11:07:29 [INFO]   [F2 E12 EMA] batch    6/8 elapsed=4s
+2026-05-08 11:07:30 [INFO]   [F2 E12 EMA] batch    7/8 elapsed=5s
+2026-05-08 11:07:30 [INFO]   [F2 E12 EMA] batch    8/8 elapsed=5s
+2026-05-08 11:07:30 [INFO]   [BEST] F2 E12 train L=0.6049 F1=0.8097 | val[model] L=0.6086 F1=0.9531 | epoch=19m23s
+2026-05-08 11:07:32 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 11:07:32 [INFO]   -- Epoch 13/30 [cosine] lr=7.50e-05 --
+2026-05-08 11:09:30 [INFO]   [F2 E13 TRAIN] batch  152/1520 loss=0.5648 elapsed=1m58s eta=17m43s
+2026-05-08 11:11:25 [INFO]   [F2 E13 TRAIN] batch  304/1520 loss=0.5596 elapsed=3m52s eta=15m31s
+2026-05-08 11:13:19 [INFO]   [F2 E13 TRAIN] batch  456/1520 loss=0.5646 elapsed=5m47s eta=13m31s
+2026-05-08 11:15:15 [INFO]   [F2 E13 TRAIN] batch  608/1520 loss=0.5681 elapsed=7m42s eta=11m34s
+2026-05-08 11:17:09 [INFO]   [F2 E13 TRAIN] batch  760/1520 loss=0.5699 elapsed=9m37s eta=9m37s
+2026-05-08 11:19:05 [INFO]   [F2 E13 TRAIN] batch  912/1520 loss=0.5815 elapsed=11m33s eta=7m42s
+2026-05-08 11:21:01 [INFO]   [F2 E13 TRAIN] batch 1064/1520 loss=0.5844 elapsed=13m28s eta=5m46s
+2026-05-08 11:22:56 [INFO]   [F2 E13 TRAIN] batch 1216/1520 loss=0.5833 elapsed=15m24s eta=3m51s
+2026-05-08 11:24:52 [INFO]   [F2 E13 TRAIN] batch 1368/1520 loss=0.5824 elapsed=17m19s eta=1m55s
+2026-05-08 11:26:46 [INFO]   [F2 E13 TRAIN] batch 1520/1520 loss=0.5808 elapsed=19m14s eta=0s
+2026-05-08 11:26:47 [INFO]   [F2 E13 VAL] batch    1/8 elapsed=0s
+2026-05-08 11:26:48 [INFO]   [F2 E13 VAL] batch    2/8 elapsed=1s
+2026-05-08 11:26:48 [INFO]   [F2 E13 VAL] batch    3/8 elapsed=1s
+2026-05-08 11:26:48 [INFO]   [F2 E13 VAL] batch    4/8 elapsed=1s
+2026-05-08 11:26:48 [INFO]   [F2 E13 VAL] batch    5/8 elapsed=1s
+2026-05-08 11:26:49 [INFO]   [F2 E13 VAL] batch    6/8 elapsed=2s
+2026-05-08 11:26:49 [INFO]   [F2 E13 VAL] batch    7/8 elapsed=2s
+2026-05-08 11:26:49 [INFO]   [F2 E13 VAL] batch    8/8 elapsed=2s
+2026-05-08 11:26:51 [INFO]   [F2 E13 EMA] batch    1/8 elapsed=1s
+2026-05-08 11:26:51 [INFO]   [F2 E13 EMA] batch    2/8 elapsed=2s
+2026-05-08 11:26:52 [INFO]   [F2 E13 EMA] batch    3/8 elapsed=2s
+2026-05-08 11:26:52 [INFO]   [F2 E13 EMA] batch    4/8 elapsed=3s
+2026-05-08 11:26:53 [INFO]   [F2 E13 EMA] batch    5/8 elapsed=3s
+2026-05-08 11:26:54 [INFO]   [F2 E13 EMA] batch    6/8 elapsed=4s
+2026-05-08 11:26:54 [INFO]   [F2 E13 EMA] batch    7/8 elapsed=5s
+2026-05-08 11:26:55 [INFO]   [F2 E13 EMA] batch    8/8 elapsed=5s
+2026-05-08 11:26:55 [INFO]   [----] F2 E13 train L=0.5808 F1=0.8215 | val[ema] L=0.5500 F1=0.9349 | epoch=19m22s
+2026-05-08 11:26:55 [INFO]   -- Epoch 14/30 [cosine] lr=6.98e-05 --
+2026-05-08 11:28:51 [INFO]   [F2 E14 TRAIN] batch  152/1520 loss=0.5613 elapsed=1m56s eta=17m25s
+2026-05-08 11:30:46 [INFO]   [F2 E14 TRAIN] batch  304/1520 loss=0.5840 elapsed=3m51s eta=15m26s
+2026-05-08 11:32:41 [INFO]   [F2 E14 TRAIN] batch  456/1520 loss=0.5811 elapsed=5m46s eta=13m29s
+2026-05-08 11:34:37 [INFO]   [F2 E14 TRAIN] batch  608/1520 loss=0.5972 elapsed=7m42s eta=11m33s
+2026-05-08 11:36:33 [INFO]   [F2 E14 TRAIN] batch  760/1520 loss=0.5941 elapsed=9m37s eta=9m37s
+2026-05-08 11:38:28 [INFO]   [F2 E14 TRAIN] batch  912/1520 loss=0.5899 elapsed=11m33s eta=7m42s
+2026-05-08 11:40:24 [INFO]   [F2 E14 TRAIN] batch 1064/1520 loss=0.5905 elapsed=13m29s eta=5m46s
+2026-05-08 11:42:19 [INFO]   [F2 E14 TRAIN] batch 1216/1520 loss=0.5876 elapsed=15m24s eta=3m51s
+2026-05-08 11:44:14 [INFO]   [F2 E14 TRAIN] batch 1368/1520 loss=0.5831 elapsed=17m19s eta=1m55s
+2026-05-08 11:46:10 [INFO]   [F2 E14 TRAIN] batch 1520/1520 loss=0.5832 elapsed=19m15s eta=0s
+2026-05-08 11:46:11 [INFO]   [F2 E14 VAL] batch    1/8 elapsed=0s
+2026-05-08 11:46:11 [INFO]   [F2 E14 VAL] batch    2/8 elapsed=1s
+2026-05-08 11:46:11 [INFO]   [F2 E14 VAL] batch    3/8 elapsed=1s
+2026-05-08 11:46:11 [INFO]   [F2 E14 VAL] batch    4/8 elapsed=1s
+2026-05-08 11:46:12 [INFO]   [F2 E14 VAL] batch    5/8 elapsed=1s
+2026-05-08 11:46:12 [INFO]   [F2 E14 VAL] batch    6/8 elapsed=2s
+2026-05-08 11:46:12 [INFO]   [F2 E14 VAL] batch    7/8 elapsed=2s
+2026-05-08 11:46:12 [INFO]   [F2 E14 VAL] batch    8/8 elapsed=2s
+2026-05-08 11:46:14 [INFO]   [F2 E14 EMA] batch    1/8 elapsed=1s
+2026-05-08 11:46:14 [INFO]   [F2 E14 EMA] batch    2/8 elapsed=2s
+2026-05-08 11:46:15 [INFO]   [F2 E14 EMA] batch    3/8 elapsed=2s
+2026-05-08 11:46:16 [INFO]   [F2 E14 EMA] batch    4/8 elapsed=3s
+2026-05-08 11:46:16 [INFO]   [F2 E14 EMA] batch    5/8 elapsed=3s
+2026-05-08 11:46:17 [INFO]   [F2 E14 EMA] batch    6/8 elapsed=4s
+2026-05-08 11:46:18 [INFO]   [F2 E14 EMA] batch    7/8 elapsed=5s
+2026-05-08 11:46:18 [INFO]   [F2 E14 EMA] batch    8/8 elapsed=5s
+2026-05-08 11:46:18 [INFO]   [----] F2 E14 train L=0.5832 F1=0.8146 | val[model] L=0.5714 F1=0.9518 | epoch=19m23s
+2026-05-08 11:46:18 [INFO]   -- Epoch 15/30 [cosine] lr=6.44e-05 --
+2026-05-08 11:48:14 [INFO]   [F2 E15 TRAIN] batch  152/1520 loss=0.5808 elapsed=1m56s eta=17m27s
+2026-05-08 11:50:09 [INFO]   [F2 E15 TRAIN] batch  304/1520 loss=0.5592 elapsed=3m51s eta=15m24s
+2026-05-08 11:52:04 [INFO]   [F2 E15 TRAIN] batch  456/1520 loss=0.5770 elapsed=5m46s eta=13m28s
+2026-05-08 11:54:00 [INFO]   [F2 E15 TRAIN] batch  608/1520 loss=0.5877 elapsed=7m42s eta=11m33s
+2026-05-08 11:55:55 [INFO]   [F2 E15 TRAIN] batch  760/1520 loss=0.5808 elapsed=9m36s eta=9m36s
+2026-05-08 11:57:50 [INFO]   [F2 E15 TRAIN] batch  912/1520 loss=0.5807 elapsed=11m31s eta=7m41s
+2026-05-08 11:59:45 [INFO]   [F2 E15 TRAIN] batch 1064/1520 loss=0.5784 elapsed=13m27s eta=5m45s
+2026-05-08 12:01:40 [INFO]   [F2 E15 TRAIN] batch 1216/1520 loss=0.5764 elapsed=15m22s eta=3m50s
+2026-05-08 12:03:35 [INFO]   [F2 E15 TRAIN] batch 1368/1520 loss=0.5804 elapsed=17m16s eta=1m55s
+2026-05-08 12:05:30 [INFO]   [F2 E15 TRAIN] batch 1520/1520 loss=0.5831 elapsed=19m11s eta=0s
+2026-05-08 12:05:30 [INFO]   [F2 E15 VAL] batch    1/8 elapsed=0s
+2026-05-08 12:05:31 [INFO]   [F2 E15 VAL] batch    2/8 elapsed=1s
+2026-05-08 12:05:31 [INFO]   [F2 E15 VAL] batch    3/8 elapsed=1s
+2026-05-08 12:05:31 [INFO]   [F2 E15 VAL] batch    4/8 elapsed=1s
+2026-05-08 12:05:31 [INFO]   [F2 E15 VAL] batch    5/8 elapsed=1s
+2026-05-08 12:05:32 [INFO]   [F2 E15 VAL] batch    6/8 elapsed=2s
+2026-05-08 12:05:32 [INFO]   [F2 E15 VAL] batch    7/8 elapsed=2s
+2026-05-08 12:05:32 [INFO]   [F2 E15 VAL] batch    8/8 elapsed=2s
+2026-05-08 12:05:34 [INFO]   [F2 E15 EMA] batch    1/8 elapsed=1s
+2026-05-08 12:05:34 [INFO]   [F2 E15 EMA] batch    2/8 elapsed=1s
+2026-05-08 12:05:35 [INFO]   [F2 E15 EMA] batch    3/8 elapsed=2s
+2026-05-08 12:05:36 [INFO]   [F2 E15 EMA] batch    4/8 elapsed=3s
+2026-05-08 12:05:36 [INFO]   [F2 E15 EMA] batch    5/8 elapsed=3s
+2026-05-08 12:05:37 [INFO]   [F2 E15 EMA] batch    6/8 elapsed=4s
+2026-05-08 12:05:37 [INFO]   [F2 E15 EMA] batch    7/8 elapsed=5s
+2026-05-08 12:05:38 [INFO]   [F2 E15 EMA] batch    8/8 elapsed=5s
+2026-05-08 12:05:38 [INFO]   [----] F2 E15 train L=0.5831 F1=0.8237 | val[ema] L=0.5522 F1=0.9352 | epoch=19m19s
+2026-05-08 12:05:38 [INFO]   -- Epoch 16/30 [cosine] lr=5.87e-05 --
+2026-05-08 12:07:35 [INFO]   [F2 E16 TRAIN] batch  152/1520 loss=0.5941 elapsed=1m57s eta=17m35s
+2026-05-08 12:09:30 [INFO]   [F2 E16 TRAIN] batch  304/1520 loss=0.5910 elapsed=3m52s eta=15m28s
+2026-05-08 12:11:25 [INFO]   [F2 E16 TRAIN] batch  456/1520 loss=0.5794 elapsed=5m47s eta=13m30s
+2026-05-08 12:13:20 [INFO]   [F2 E16 TRAIN] batch  608/1520 loss=0.5776 elapsed=7m42s eta=11m33s
+2026-05-08 12:15:15 [INFO]   [F2 E16 TRAIN] batch  760/1520 loss=0.5750 elapsed=9m37s eta=9m37s
+2026-05-08 12:17:10 [INFO]   [F2 E16 TRAIN] batch  912/1520 loss=0.5750 elapsed=11m32s eta=7m41s
+2026-05-08 12:19:05 [INFO]   [F2 E16 TRAIN] batch 1064/1520 loss=0.5715 elapsed=13m27s eta=5m46s
+2026-05-08 12:21:00 [INFO]   [F2 E16 TRAIN] batch 1216/1520 loss=0.5679 elapsed=15m22s eta=3m50s
+2026-05-08 12:22:55 [INFO]   [F2 E16 TRAIN] batch 1368/1520 loss=0.5670 elapsed=17m17s eta=1m55s
+2026-05-08 12:24:50 [INFO]   [F2 E16 TRAIN] batch 1520/1520 loss=0.5686 elapsed=19m12s eta=0s
+2026-05-08 12:24:51 [INFO]   [F2 E16 VAL] batch    1/8 elapsed=0s
+2026-05-08 12:24:51 [INFO]   [F2 E16 VAL] batch    2/8 elapsed=1s
+2026-05-08 12:24:52 [INFO]   [F2 E16 VAL] batch    3/8 elapsed=1s
+2026-05-08 12:24:52 [INFO]   [F2 E16 VAL] batch    4/8 elapsed=1s
+2026-05-08 12:24:52 [INFO]   [F2 E16 VAL] batch    5/8 elapsed=1s
+2026-05-08 12:24:52 [INFO]   [F2 E16 VAL] batch    6/8 elapsed=2s
+2026-05-08 12:24:53 [INFO]   [F2 E16 VAL] batch    7/8 elapsed=2s
+2026-05-08 12:24:53 [INFO]   [F2 E16 VAL] batch    8/8 elapsed=2s
+2026-05-08 12:24:54 [INFO]   [F2 E16 EMA] batch    1/8 elapsed=1s
+2026-05-08 12:24:55 [INFO]   [F2 E16 EMA] batch    2/8 elapsed=2s
+2026-05-08 12:24:55 [INFO]   [F2 E16 EMA] batch    3/8 elapsed=2s
+2026-05-08 12:24:56 [INFO]   [F2 E16 EMA] batch    4/8 elapsed=3s
+2026-05-08 12:24:57 [INFO]   [F2 E16 EMA] batch    5/8 elapsed=3s
+2026-05-08 12:24:57 [INFO]   [F2 E16 EMA] batch    6/8 elapsed=4s
+2026-05-08 12:24:58 [INFO]   [F2 E16 EMA] batch    7/8 elapsed=5s
+2026-05-08 12:24:58 [INFO]   [F2 E16 EMA] batch    8/8 elapsed=5s
+2026-05-08 12:24:58 [INFO]   [BEST] F2 E16 train L=0.5686 F1=0.8189 | val[model] L=0.6259 F1=0.9536 | epoch=19m20s
+2026-05-08 12:25:00 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 12:25:00 [INFO]   -- Epoch 17/30 [cosine] lr=5.30e-05 --
+2026-05-08 12:26:56 [INFO]   [F2 E17 TRAIN] batch  152/1520 loss=0.5727 elapsed=1m56s eta=17m27s
+2026-05-08 12:28:51 [INFO]   [F2 E17 TRAIN] batch  304/1520 loss=0.5546 elapsed=3m51s eta=15m24s
+2026-05-08 12:30:46 [INFO]   [F2 E17 TRAIN] batch  456/1520 loss=0.5432 elapsed=5m46s eta=13m28s
+2026-05-08 12:32:41 [INFO]   [F2 E17 TRAIN] batch  608/1520 loss=0.5398 elapsed=7m41s eta=11m32s
+2026-05-08 12:34:36 [INFO]   [F2 E17 TRAIN] batch  760/1520 loss=0.5511 elapsed=9m36s eta=9m36s
+2026-05-08 12:36:31 [INFO]   [F2 E17 TRAIN] batch  912/1520 loss=0.5492 elapsed=11m31s eta=7m40s
+2026-05-08 12:38:26 [INFO]   [F2 E17 TRAIN] batch 1064/1520 loss=0.5523 elapsed=13m26s eta=5m45s
+2026-05-08 12:40:21 [INFO]   [F2 E17 TRAIN] batch 1216/1520 loss=0.5549 elapsed=15m21s eta=3m50s
+2026-05-08 12:42:17 [INFO]   [F2 E17 TRAIN] batch 1368/1520 loss=0.5526 elapsed=17m16s eta=1m55s
+2026-05-08 12:44:11 [INFO]   [F2 E17 TRAIN] batch 1520/1520 loss=0.5560 elapsed=19m11s eta=0s
+2026-05-08 12:44:12 [INFO]   [F2 E17 VAL] batch    1/8 elapsed=0s
+2026-05-08 12:44:13 [INFO]   [F2 E17 VAL] batch    2/8 elapsed=1s
+2026-05-08 12:44:13 [INFO]   [F2 E17 VAL] batch    3/8 elapsed=1s
+2026-05-08 12:44:13 [INFO]   [F2 E17 VAL] batch    4/8 elapsed=1s
+2026-05-08 12:44:13 [INFO]   [F2 E17 VAL] batch    5/8 elapsed=1s
+2026-05-08 12:44:14 [INFO]   [F2 E17 VAL] batch    6/8 elapsed=2s
+2026-05-08 12:44:14 [INFO]   [F2 E17 VAL] batch    7/8 elapsed=2s
+2026-05-08 12:44:14 [INFO]   [F2 E17 VAL] batch    8/8 elapsed=2s
+2026-05-08 12:44:16 [INFO]   [F2 E17 EMA] batch    1/8 elapsed=1s
+2026-05-08 12:44:16 [INFO]   [F2 E17 EMA] batch    2/8 elapsed=1s
+2026-05-08 12:44:17 [INFO]   [F2 E17 EMA] batch    3/8 elapsed=2s
+2026-05-08 12:44:17 [INFO]   [F2 E17 EMA] batch    4/8 elapsed=3s
+2026-05-08 12:44:18 [INFO]   [F2 E17 EMA] batch    5/8 elapsed=3s
+2026-05-08 12:44:19 [INFO]   [F2 E17 EMA] batch    6/8 elapsed=4s
+2026-05-08 12:44:19 [INFO]   [F2 E17 EMA] batch    7/8 elapsed=5s
+2026-05-08 12:44:20 [INFO]   [F2 E17 EMA] batch    8/8 elapsed=5s
+2026-05-08 12:44:20 [INFO]   [BEST] F2 E17 train L=0.5560 F1=0.8252 | val[ema] L=0.5480 F1=0.9627 | epoch=19m19s
+2026-05-08 12:44:21 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 12:44:21 [INFO]   -- Epoch 18/30 [cosine] lr=4.71e-05 --
+2026-05-08 12:46:17 [INFO]   [F2 E18 TRAIN] batch  152/1520 loss=0.5118 elapsed=1m55s eta=17m22s
+2026-05-08 12:48:12 [INFO]   [F2 E18 TRAIN] batch  304/1520 loss=0.5328 elapsed=3m51s eta=15m24s
+2026-05-08 12:50:07 [INFO]   [F2 E18 TRAIN] batch  456/1520 loss=0.5408 elapsed=5m45s eta=13m26s
+2026-05-08 12:52:02 [INFO]   [F2 E18 TRAIN] batch  608/1520 loss=0.5417 elapsed=7m40s eta=11m30s
+2026-05-08 12:53:57 [INFO]   [F2 E18 TRAIN] batch  760/1520 loss=0.5417 elapsed=9m35s eta=9m35s
+2026-05-08 12:55:52 [INFO]   [F2 E18 TRAIN] batch  912/1520 loss=0.5452 elapsed=11m30s eta=7m40s
+2026-05-08 12:57:47 [INFO]   [F2 E18 TRAIN] batch 1064/1520 loss=0.5484 elapsed=13m25s eta=5m45s
+2026-05-08 12:59:42 [INFO]   [F2 E18 TRAIN] batch 1216/1520 loss=0.5501 elapsed=15m20s eta=3m50s
+2026-05-08 13:01:36 [INFO]   [F2 E18 TRAIN] batch 1368/1520 loss=0.5493 elapsed=17m15s eta=1m55s
+2026-05-08 13:03:31 [INFO]   [F2 E18 TRAIN] batch 1520/1520 loss=0.5503 elapsed=19m09s eta=0s
+2026-05-08 13:03:32 [INFO]   [F2 E18 VAL] batch    1/8 elapsed=0s
+2026-05-08 13:03:32 [INFO]   [F2 E18 VAL] batch    2/8 elapsed=1s
+2026-05-08 13:03:32 [INFO]   [F2 E18 VAL] batch    3/8 elapsed=1s
+2026-05-08 13:03:33 [INFO]   [F2 E18 VAL] batch    4/8 elapsed=1s
+2026-05-08 13:03:33 [INFO]   [F2 E18 VAL] batch    5/8 elapsed=1s
+2026-05-08 13:03:33 [INFO]   [F2 E18 VAL] batch    6/8 elapsed=2s
+2026-05-08 13:03:33 [INFO]   [F2 E18 VAL] batch    7/8 elapsed=2s
+2026-05-08 13:03:34 [INFO]   [F2 E18 VAL] batch    8/8 elapsed=2s
+2026-05-08 13:03:35 [INFO]   [F2 E18 EMA] batch    1/8 elapsed=1s
+2026-05-08 13:03:36 [INFO]   [F2 E18 EMA] batch    2/8 elapsed=1s
+2026-05-08 13:03:36 [INFO]   [F2 E18 EMA] batch    3/8 elapsed=2s
+2026-05-08 13:03:37 [INFO]   [F2 E18 EMA] batch    4/8 elapsed=3s
+2026-05-08 13:03:38 [INFO]   [F2 E18 EMA] batch    5/8 elapsed=3s
+2026-05-08 13:03:38 [INFO]   [F2 E18 EMA] batch    6/8 elapsed=4s
+2026-05-08 13:03:39 [INFO]   [F2 E18 EMA] batch    7/8 elapsed=5s
+2026-05-08 13:03:39 [INFO]   [F2 E18 EMA] batch    8/8 elapsed=5s
+2026-05-08 13:03:39 [INFO]   [BEST] F2 E18 train L=0.5503 F1=0.8257 | val[model] L=0.5563 F1=0.9701 | epoch=19m17s
+2026-05-08 13:03:41 [INFO]     saved runs/v8a_t2/best_dinov2l_fold_2.pth
+2026-05-08 13:03:41 [INFO]   -- Epoch 19/30 [cosine] lr=4.14e-05 --
+2026-05-08 13:05:37 [INFO]   [F2 E19 TRAIN] batch  152/1520 loss=0.5603 elapsed=1m56s eta=17m28s
+2026-05-08 13:07:32 [INFO]   [F2 E19 TRAIN] batch  304/1520 loss=0.5472 elapsed=3m51s eta=15m26s
+2026-05-08 13:09:28 [INFO]   [F2 E19 TRAIN] batch  456/1520 loss=0.5371 elapsed=5m46s eta=13m29s
+2026-05-08 13:11:22 [INFO]   [F2 E19 TRAIN] batch  608/1520 loss=0.5508 elapsed=7m41s eta=11m32s
+2026-05-08 13:13:17 [INFO]   [F2 E19 TRAIN] batch  760/1520 loss=0.5482 elapsed=9m36s eta=9m36s
+2026-05-08 13:15:12 [INFO]   [F2 E19 TRAIN] batch  912/1520 loss=0.5461 elapsed=11m31s eta=7m41s
+2026-05-08 13:17:08 [INFO]   [F2 E19 TRAIN] batch 1064/1520 loss=0.5421 elapsed=13m26s eta=5m45s
+2026-05-08 13:19:03 [INFO]   [F2 E19 TRAIN] batch 1216/1520 loss=0.5407 elapsed=15m22s eta=3m50s
+2026-05-08 13:20:59 [INFO]   [F2 E19 TRAIN] batch 1368/1520 loss=0.5406 elapsed=17m18s eta=1m55s
+2026-05-08 13:22:54 [INFO]   [F2 E19 TRAIN] batch 1520/1520 loss=0.5448 elapsed=19m13s eta=0s
+2026-05-08 13:22:55 [INFO]   [F2 E19 VAL] batch    1/8 elapsed=0s
+2026-05-08 13:22:55 [INFO]   [F2 E19 VAL] batch    2/8 elapsed=1s
+2026-05-08 13:22:55 [INFO]   [F2 E19 VAL] batch    3/8 elapsed=1s
+2026-05-08 13:22:56 [INFO]   [F2 E19 VAL] batch    4/8 elapsed=1s
+2026-05-08 13:22:56 [INFO]   [F2 E19 VAL] batch    5/8 elapsed=1s
+2026-05-08 13:22:56 [INFO]   [F2 E19 VAL] batch    6/8 elapsed=2s
+2026-05-08 13:22:57 [INFO]   [F2 E19 VAL] batch    7/8 elapsed=2s
+2026-05-08 13:22:57 [INFO]   [F2 E19 VAL] batch    8/8 elapsed=2s
+2026-05-08 13:22:58 [INFO]   [F2 E19 EMA] batch    1/8 elapsed=1s
+2026-05-08 13:22:59 [INFO]   [F2 E19 EMA] batch    2/8 elapsed=1s
+2026-05-08 13:22:59 [INFO]   [F2 E19 EMA] batch    3/8 elapsed=2s
+2026-05-08 13:23:00 [INFO]   [F2 E19 EMA] batch    4/8 elapsed=3s
+2026-05-08 13:23:01 [INFO]   [F2 E19 EMA] batch    5/8 elapsed=3s
+2026-05-08 13:23:01 [INFO]   [F2 E19 EMA] batch    6/8 elapsed=4s
+2026-05-08 13:23:02 [INFO]   [F2 E19 EMA] batch    7/8 elapsed=5s
+2026-05-08 13:23:02 [INFO]   [F2 E19 EMA] batch    8/8 elapsed=5s
+2026-05-08 13:23:02 [INFO]   [----] F2 E19 train L=0.5448 F1=0.8300 | val[model] L=0.5272 F1=0.9651 | epoch=19m21s
+2026-05-08 13:23:02 [INFO]   -- Epoch 20/30 [cosine] lr=3.57e-05 --
+2026-05-08 13:24:59 [INFO]   [F2 E20 TRAIN] batch  152/1520 loss=0.5600 elapsed=1m56s eta=17m29s
+2026-05-08 13:26:54 [INFO]   [F2 E20 TRAIN] batch  304/1520 loss=0.5675 elapsed=3m52s eta=15m28s
+2026-05-08 13:28:50 [INFO]   [F2 E20 TRAIN] batch  456/1520 loss=0.5591 elapsed=5m48s eta=13m32s
+2026-05-08 13:30:45 [INFO]   [F2 E20 TRAIN] batch  608/1520 loss=0.5487 elapsed=7m43s eta=11m34s
+2026-05-08 13:32:40 [INFO]   [F2 E20 TRAIN] batch  760/1520 loss=0.5426 elapsed=9m38s eta=9m38s
+2026-05-08 13:34:35 [INFO]   [F2 E20 TRAIN] batch  912/1520 loss=0.5386 elapsed=11m33s eta=7m42s
+2026-05-08 13:36:31 [INFO]   [F2 E20 TRAIN] batch 1064/1520 loss=0.5333 elapsed=13m28s eta=5m46s
+2026-05-08 13:38:26 [INFO]   [F2 E20 TRAIN] batch 1216/1520 loss=0.5382 elapsed=15m23s eta=3m50s
+2026-05-08 13:40:21 [INFO]   [F2 E20 TRAIN] batch 1368/1520 loss=0.5365 elapsed=17m18s eta=1m55s
+2026-05-08 13:42:16 [INFO]   [F2 E20 TRAIN] batch 1520/1520 loss=0.5367 elapsed=19m14s eta=0s
+2026-05-08 13:42:17 [INFO]   [F2 E20 VAL] batch    1/8 elapsed=0s
+2026-05-08 13:42:17 [INFO]   [F2 E20 VAL] batch    2/8 elapsed=1s
+2026-05-08 13:42:18 [INFO]   [F2 E20 VAL] batch    3/8 elapsed=1s
+2026-05-08 13:42:18 [INFO]   [F2 E20 VAL] batch    4/8 elapsed=1s
+2026-05-08 13:42:18 [INFO]   [F2 E20 VAL] batch    5/8 elapsed=1s
+2026-05-08 13:42:18 [INFO]   [F2 E20 VAL] batch    6/8 elapsed=2s
+2026-05-08 13:42:19 [INFO]   [F2 E20 VAL] batch    7/8 elapsed=2s
+2026-05-08 13:42:19 [INFO]   [F2 E20 VAL] batch    8/8 elapsed=2s
+2026-05-08 13:42:20 [INFO]   [F2 E20 EMA] batch    1/8 elapsed=1s
+2026-05-08 13:42:21 [INFO]   [F2 E20 EMA] batch    2/8 elapsed=2s
+2026-05-08 13:42:22 [INFO]   [F2 E20 EMA] batch    3/8 elapsed=2s
+2026-05-08 13:42:22 [INFO]   [F2 E20 EMA] batch    4/8 elapsed=3s
+2026-05-08 13:42:23 [INFO]   [F2 E20 EMA] batch    5/8 elapsed=3s
+2026-05-08 13:42:23 [INFO]   [F2 E20 EMA] batch    6/8 elapsed=4s
+2026-05-08 13:42:24 [INFO]   [F2 E20 EMA] batch    7/8 elapsed=5s
+2026-05-08 13:42:24 [INFO]   [F2 E20 EMA] batch    8/8 elapsed=5s
+2026-05-08 13:42:24 [INFO]   [----] F2 E20 train L=0.5367 F1=0.8319 | val[ema] L=0.5464 F1=0.9701 | epoch=19m22s
+2026-05-08 13:42:24 [INFO]   -- Epoch 21/30 [cosine] lr=3.03e-05 --
+2026-05-08 13:44:21 [INFO]   [F2 E21 TRAIN] batch  152/1520 loss=0.5541 elapsed=1m56s eta=17m28s
+2026-05-08 13:46:16 [INFO]   [F2 E21 TRAIN] batch  304/1520 loss=0.5364 elapsed=3m51s eta=15m27s
+2026-05-08 13:48:11 [INFO]   [F2 E21 TRAIN] batch  456/1520 loss=0.5416 elapsed=5m46s eta=13m28s
+2026-05-08 13:50:06 [INFO]   [F2 E21 TRAIN] batch  608/1520 loss=0.5388 elapsed=7m41s eta=11m31s
+2026-05-08 13:52:00 [INFO]   [F2 E21 TRAIN] batch  760/1520 loss=0.5388 elapsed=9m36s eta=9m36s
+2026-05-08 13:53:55 [INFO]   [F2 E21 TRAIN] batch  912/1520 loss=0.5410 elapsed=11m30s eta=7m40s
+2026-05-08 13:55:50 [INFO]   [F2 E21 TRAIN] batch 1064/1520 loss=0.5399 elapsed=13m25s eta=5m45s
+2026-05-08 13:57:45 [INFO]   [F2 E21 TRAIN] batch 1216/1520 loss=0.5405 elapsed=15m21s eta=3m50s
+2026-05-08 13:59:41 [INFO]   [F2 E21 TRAIN] batch 1368/1520 loss=0.5416 elapsed=17m16s eta=1m55s
+2026-05-08 14:01:35 [INFO]   [F2 E21 TRAIN] batch 1520/1520 loss=0.5394 elapsed=19m10s eta=0s
+2026-05-08 14:01:36 [INFO]   [F2 E21 VAL] batch    1/8 elapsed=0s
+2026-05-08 14:01:36 [INFO]   [F2 E21 VAL] batch    2/8 elapsed=1s
+2026-05-08 14:01:37 [INFO]   [F2 E21 VAL] batch    3/8 elapsed=1s
+2026-05-08 14:01:37 [INFO]   [F2 E21 VAL] batch    4/8 elapsed=1s
+2026-05-08 14:01:37 [INFO]   [F2 E21 VAL] batch    5/8 elapsed=1s
+2026-05-08 14:01:37 [INFO]   [F2 E21 VAL] batch    6/8 elapsed=2s
+2026-05-08 14:01:38 [INFO]   [F2 E21 VAL] batch    7/8 elapsed=2s
+2026-05-08 14:01:38 [INFO]   [F2 E21 VAL] batch    8/8 elapsed=2s
+2026-05-08 14:01:39 [INFO]   [F2 E21 EMA] batch    1/8 elapsed=1s
+2026-05-08 14:01:40 [INFO]   [F2 E21 EMA] batch    2/8 elapsed=1s
+2026-05-08 14:01:41 [INFO]   [F2 E21 EMA] batch    3/8 elapsed=2s
+2026-05-08 14:01:41 [INFO]   [F2 E21 EMA] batch    4/8 elapsed=3s
+2026-05-08 14:01:42 [INFO]   [F2 E21 EMA] batch    5/8 elapsed=3s
+2026-05-08 14:01:42 [INFO]   [F2 E21 EMA] batch    6/8 elapsed=4s
+2026-05-08 14:01:43 [INFO]   [F2 E21 EMA] batch    7/8 elapsed=5s
+2026-05-08 14:01:43 [INFO]   [F2 E21 EMA] batch    8/8 elapsed=5s
+2026-05-08 14:01:43 [INFO]   [----] F2 E21 train L=0.5394 F1=0.8221 | val[ema] L=0.5573 F1=0.9701 | epoch=19m18s
+2026-05-08 14:01:43 [INFO]   -- Epoch 22/30 [cosine] lr=2.51e-05 --
+2026-05-08 14:03:39 [INFO]   [F2 E22 TRAIN] batch  152/1520 loss=0.5335 elapsed=1m55s eta=17m17s
+2026-05-08 14:05:33 [INFO]   [F2 E22 TRAIN] batch  304/1520 loss=0.5212 elapsed=3m49s eta=15m18s
+2026-05-08 14:07:28 [INFO]   [F2 E22 TRAIN] batch  456/1520 loss=0.5180 elapsed=5m44s eta=13m24s
+2026-05-08 14:09:23 [INFO]   [F2 E22 TRAIN] batch  608/1520 loss=0.5125 elapsed=7m39s eta=11m29s
+2026-05-08 14:11:19 [INFO]   [F2 E22 TRAIN] batch  760/1520 loss=0.5130 elapsed=9m35s eta=9m35s
+2026-05-08 14:13:14 [INFO]   [F2 E22 TRAIN] batch  912/1520 loss=0.5151 elapsed=11m30s eta=7m40s
+2026-05-08 14:15:09 [INFO]   [F2 E22 TRAIN] batch 1064/1520 loss=0.5143 elapsed=13m25s eta=5m45s
+2026-05-08 14:17:04 [INFO]   [F2 E22 TRAIN] batch 1216/1520 loss=0.5153 elapsed=15m20s eta=3m50s
+2026-05-08 14:18:59 [INFO]   [F2 E22 TRAIN] batch 1368/1520 loss=0.5137 elapsed=17m15s eta=1m55s
+2026-05-08 14:20:54 [INFO]   [F2 E22 TRAIN] batch 1520/1520 loss=0.5136 elapsed=19m10s eta=0s
+2026-05-08 14:20:55 [INFO]   [F2 E22 VAL] batch    1/8 elapsed=0s
+2026-05-08 14:20:55 [INFO]   [F2 E22 VAL] batch    2/8 elapsed=1s
+2026-05-08 14:20:56 [INFO]   [F2 E22 VAL] batch    3/8 elapsed=1s
+2026-05-08 14:20:56 [INFO]   [F2 E22 VAL] batch    4/8 elapsed=1s
+2026-05-08 14:20:56 [INFO]   [F2 E22 VAL] batch    5/8 elapsed=1s
+2026-05-08 14:20:56 [INFO]   [F2 E22 VAL] batch    6/8 elapsed=2s
+2026-05-08 14:20:57 [INFO]   [F2 E22 VAL] batch    7/8 elapsed=2s
+2026-05-08 14:20:57 [INFO]   [F2 E22 VAL] batch    8/8 elapsed=2s
+2026-05-08 14:20:58 [INFO]   [F2 E22 EMA] batch    1/8 elapsed=1s
+2026-05-08 14:20:59 [INFO]   [F2 E22 EMA] batch    2/8 elapsed=2s
+2026-05-08 14:21:00 [INFO]   [F2 E22 EMA] batch    3/8 elapsed=2s
+2026-05-08 14:21:00 [INFO]   [F2 E22 EMA] batch    4/8 elapsed=3s
+2026-05-08 14:21:01 [INFO]   [F2 E22 EMA] batch    5/8 elapsed=3s
+2026-05-08 14:21:01 [INFO]   [F2 E22 EMA] batch    6/8 elapsed=4s
+2026-05-08 14:21:02 [INFO]   [F2 E22 EMA] batch    7/8 elapsed=5s
+2026-05-08 14:21:02 [INFO]   [F2 E22 EMA] batch    8/8 elapsed=5s
+2026-05-08 14:21:02 [INFO]   [----] F2 E22 train L=0.5136 F1=0.8424 | val[ema] L=0.5642 F1=0.9701 | epoch=19m18s
+2026-05-08 14:21:02 [INFO]   -- Epoch 23/30 [cosine] lr=2.02e-05 --
+2026-05-08 14:22:59 [INFO]   [F2 E23 TRAIN] batch  152/1520 loss=0.5447 elapsed=1m56s eta=17m28s
+2026-05-08 14:24:54 [INFO]   [F2 E23 TRAIN] batch  304/1520 loss=0.5316 elapsed=3m51s eta=15m26s
+2026-05-08 14:26:49 [INFO]   [F2 E23 TRAIN] batch  456/1520 loss=0.5294 elapsed=5m47s eta=13m29s
+2026-05-08 14:28:45 [INFO]   [F2 E23 TRAIN] batch  608/1520 loss=0.5365 elapsed=7m42s eta=11m33s
+2026-05-08 14:30:40 [INFO]   [F2 E23 TRAIN] batch  760/1520 loss=0.5304 elapsed=9m37s eta=9m37s
+2026-05-08 14:32:35 [INFO]   [F2 E23 TRAIN] batch  912/1520 loss=0.5354 elapsed=11m32s eta=7m41s
+2026-05-08 14:34:30 [INFO]   [F2 E23 TRAIN] batch 1064/1520 loss=0.5386 elapsed=13m27s eta=5m45s
+2026-05-08 14:36:25 [INFO]   [F2 E23 TRAIN] batch 1216/1520 loss=0.5390 elapsed=15m22s eta=3m50s
+2026-05-08 14:38:19 [INFO]   [F2 E23 TRAIN] batch 1368/1520 loss=0.5362 elapsed=17m17s eta=1m55s
+2026-05-08 14:40:14 [INFO]   [F2 E23 TRAIN] batch 1520/1520 loss=0.5339 elapsed=19m11s eta=0s
+2026-05-08 14:40:15 [INFO]   [F2 E23 VAL] batch    1/8 elapsed=0s
+2026-05-08 14:40:15 [INFO]   [F2 E23 VAL] batch    2/8 elapsed=1s
+2026-05-08 14:40:15 [INFO]   [F2 E23 VAL] batch    3/8 elapsed=1s
+2026-05-08 14:40:16 [INFO]   [F2 E23 VAL] batch    4/8 elapsed=1s
+2026-05-08 14:40:16 [INFO]   [F2 E23 VAL] batch    5/8 elapsed=1s
+2026-05-08 14:40:16 [INFO]   [F2 E23 VAL] batch    6/8 elapsed=2s
+2026-05-08 14:40:16 [INFO]   [F2 E23 VAL] batch    7/8 elapsed=2s
+2026-05-08 14:40:17 [INFO]   [F2 E23 VAL] batch    8/8 elapsed=2s
+2026-05-08 14:40:18 [INFO]   [F2 E23 EMA] batch    1/8 elapsed=1s
+2026-05-08 14:40:19 [INFO]   [F2 E23 EMA] batch    2/8 elapsed=2s
+2026-05-08 14:40:19 [INFO]   [F2 E23 EMA] batch    3/8 elapsed=2s
+2026-05-08 14:40:20 [INFO]   [F2 E23 EMA] batch    4/8 elapsed=3s
+2026-05-08 14:40:20 [INFO]   [F2 E23 EMA] batch    5/8 elapsed=3s
+2026-05-08 14:40:21 [INFO]   [F2 E23 EMA] batch    6/8 elapsed=4s
+2026-05-08 14:40:22 [INFO]   [F2 E23 EMA] batch    7/8 elapsed=5s
+2026-05-08 14:40:22 [INFO]   [F2 E23 EMA] batch    8/8 elapsed=5s
+2026-05-08 14:40:22 [INFO]   [----] F2 E23 train L=0.5339 F1=0.8332 | val[ema] L=0.5674 F1=0.9701 | epoch=19m19s
+2026-05-08 14:40:22 [INFO]   -- Epoch 24/30 [cosine] lr=1.58e-05 --

@@ -1,0 +1,158 @@
+2026-05-11 11:47:27 [INFO] === V8b Training (KD) gestartet ===
+2026-05-11 11:47:27 [INFO] Logfile : runs/v8b_t2/train_20260511_114727.log
+2026-05-11 11:47:27 [INFO] Stats   : runs/v8b_t2/stats_20260511_114727.csv
+2026-05-11 11:47:27 [INFO] PID     : 12264
+2026-05-11 11:47:27 [INFO] CWD     : /home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian
+2026-05-11 11:47:27 [INFO] Python  : 3.10.7
+2026-05-11 11:47:29 [INFO] DATA_ROOT = /datasets/multi-view-pig-posture-recognition
+2026-05-11 11:47:29 [INFO] Device (Master): cuda:1  |  device_ids=[1, 0, 2, 3]
+2026-05-11 11:47:29 [INFO]   GPU 0: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 11:47:29 [INFO]   GPU 1: Tesla V100-SXM2-32GB (33.8 GB)  [MASTER]
+2026-05-11 11:47:29 [INFO]   GPU 2: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 11:47:29 [INFO]   GPU 3: Tesla V100-SXM2-32GB (33.8 GB)  [replica]
+2026-05-11 11:47:29 [INFO] ============================================================
+2026-05-11 11:47:29 [INFO] Daten laden
+2026-05-11 11:47:29 [INFO] ============================================================
+2026-05-11 11:47:30 [INFO] Pseudo-Labels: 1000 hinzugefuegt
+2026-05-11 11:47:30 [INFO]   pseudo 0 - Lateral_lying_left       200
+2026-05-11 11:47:30 [INFO]   pseudo 1 - Lateral_lying_right      200
+2026-05-11 11:47:30 [INFO]   pseudo 2 - Sitting                  200
+2026-05-11 11:47:30 [INFO]   pseudo 3 - Standing                 200
+2026-05-11 11:47:30 [INFO]   pseudo 4 - Sternal_lying            200
+2026-05-11 11:47:30 [INFO] Instanzen total: 24450  echt: 23450  pseudo: 1000
+2026-05-11 11:47:30 [INFO]   klasse 0 - Lateral_lying_left      3283
+2026-05-11 11:47:30 [INFO]   klasse 1 - Lateral_lying_right     3635
+2026-05-11 11:47:30 [INFO]   klasse 2 - Sitting                  895
+2026-05-11 11:47:30 [INFO]   klasse 3 - Standing               10128
+2026-05-11 11:47:30 [INFO]   klasse 4 - Sternal_lying           6509
+2026-05-11 11:47:30 [INFO] STRICT CLO auf Test-Kameras: ['pen1_tur_cam1', 'pen2_orb_cam2', 'pen2_tur_cam2']
+2026-05-11 11:47:30 [INFO] 
+3 Folds:
+2026-05-11 11:47:30 [INFO]   Fold 1: Val=pen1_tur_cam1 (200 echt) | Train=24250 (23250 echt + 1000 pseudo)
+2026-05-11 11:47:30 [INFO]   Fold 2: Val=pen2_orb_cam2 (120 echt) | Train=24330 (23330 echt + 1000 pseudo)
+2026-05-11 11:47:30 [INFO]   Fold 3: Val=pen2_tur_cam2 (196 echt) | Train=24254 (23254 echt + 1000 pseudo)
+2026-05-11 11:47:30 [INFO] ============================================================
+2026-05-11 11:47:30 [INFO] Schritt 1: Teacher-Soft-Targets
+2026-05-11 11:47:30 [INFO] ============================================================
+2026-05-11 11:47:30 [INFO] ============================================================
+2026-05-11 11:47:30 [INFO] Teacher-Soft Precompute fuer 24450 Samples
+2026-05-11 11:47:30 [INFO] ============================================================
+2026-05-11 11:47:30 [INFO]   dinov2l: best_dinov2l_fold_1.pth @ 518px
+2026-05-11 11:48:55 [INFO]     teacher batch  153/765 elapsed=1m17s eta=5m09s
+2026-05-11 11:50:00 [INFO]     teacher batch  306/765 elapsed=2m22s eta=3m33s
+2026-05-11 11:51:06 [INFO]     teacher batch  459/765 elapsed=3m28s eta=2m18s
+2026-05-11 11:52:12 [INFO]     teacher batch  612/765 elapsed=4m34s eta=1m08s
+2026-05-11 11:53:16 [INFO]     teacher batch  765/765 elapsed=5m38s eta=0s
+2026-05-11 11:53:17 [INFO]   dinov2l: best_dinov2l_fold_1.pth done (5m47s)
+2026-05-11 11:53:17 [INFO]   dinov2l: best_dinov2l_fold_2.pth @ 518px
+2026-05-11 11:54:31 [INFO]     teacher batch  153/765 elapsed=1m08s eta=4m32s
+2026-05-11 11:55:35 [INFO]     teacher batch  306/765 elapsed=2m12s eta=3m18s
+2026-05-11 11:56:40 [INFO]     teacher batch  459/765 elapsed=3m16s eta=2m10s
+2026-05-11 11:57:44 [INFO]     teacher batch  612/765 elapsed=4m20s eta=1m05s
+2026-05-11 11:58:48 [INFO]     teacher batch  765/765 elapsed=5m24s eta=0s
+2026-05-11 11:58:48 [INFO]   dinov2l: best_dinov2l_fold_2.pth done (5m31s)
+2026-05-11 11:58:48 [INFO]   dinov2l: best_dinov2l_fold_3.pth @ 518px
+2026-05-11 12:00:01 [INFO]     teacher batch  153/765 elapsed=1m07s eta=4m30s
+2026-05-11 12:01:06 [INFO]     teacher batch  306/765 elapsed=2m12s eta=3m18s
+2026-05-11 12:02:10 [INFO]     teacher batch  459/765 elapsed=3m16s eta=2m10s
+2026-05-11 12:03:14 [INFO]     teacher batch  612/765 elapsed=4m20s eta=1m05s
+2026-05-11 12:04:18 [INFO]     teacher batch  765/765 elapsed=5m24s eta=0s
+2026-05-11 12:04:19 [INFO]   dinov2l: best_dinov2l_fold_3.pth done (5m30s)
+2026-05-11 12:04:19 [INFO]   dinov2l: 3 Folds gemittelt, weight=1.5
+2026-05-11 12:04:19 [INFO]   eva02l: best_eva02l_fold_1.pth @ 448px
+2026-05-11 12:05:33 [INFO]     teacher batch  153/765 elapsed=1m08s eta=4m34s
+2026-05-11 12:06:38 [INFO]     teacher batch  306/765 elapsed=2m12s eta=3m19s
+2026-05-11 12:07:42 [INFO]     teacher batch  459/765 elapsed=3m17s eta=2m11s
+2026-05-11 12:08:46 [INFO]     teacher batch  612/765 elapsed=4m21s eta=1m05s
+2026-05-11 12:09:50 [INFO]     teacher batch  765/765 elapsed=5m25s eta=0s
+2026-05-11 12:09:50 [INFO]   eva02l: best_eva02l_fold_1.pth done (5m31s)
+2026-05-11 12:09:50 [INFO]   eva02l: best_eva02l_fold_2.pth @ 448px
+2026-05-11 12:11:07 [INFO]     teacher batch  153/765 elapsed=1m09s eta=4m37s
+2026-05-11 12:12:12 [INFO]     teacher batch  306/765 elapsed=2m14s eta=3m21s
+2026-05-11 12:13:16 [INFO]     teacher batch  459/765 elapsed=3m19s eta=2m12s
+2026-05-11 12:14:21 [INFO]     teacher batch  612/765 elapsed=4m23s eta=1m05s
+2026-05-11 12:15:24 [INFO]     teacher batch  765/765 elapsed=5m27s eta=0s
+2026-05-11 12:15:25 [INFO]   eva02l: best_eva02l_fold_2.pth done (5m34s)
+2026-05-11 12:15:25 [INFO]   eva02l: best_eva02l_fold_3.pth @ 448px
+2026-05-11 12:16:42 [INFO]     teacher batch  153/765 elapsed=1m09s eta=4m39s
+2026-05-11 12:17:47 [INFO]     teacher batch  306/765 elapsed=2m15s eta=3m22s
+2026-05-11 12:18:51 [INFO]     teacher batch  459/765 elapsed=3m19s eta=2m13s
+2026-05-11 12:19:56 [INFO]     teacher batch  612/765 elapsed=4m24s eta=1m06s
+2026-05-11 12:21:00 [INFO]     teacher batch  765/765 elapsed=5m28s eta=0s
+2026-05-11 12:21:01 [INFO]   eva02l: best_eva02l_fold_3.pth done (5m35s)
+2026-05-11 12:21:01 [INFO]   eva02l: 3 Folds gemittelt, weight=1.0
+2026-05-11 12:21:01 [INFO] [SAVED] teacher_soft_t2_v7.npy  shape=(24450, 5)
+2026-05-11 12:21:01 [INFO] Teacher-Argmax Agreement mit Labels: 0.9891
+2026-05-11 12:21:01 [INFO] Max-Prob Histogramm:
+2026-05-11 12:21:01 [INFO]   [0.00,0.50):    97 (0.4%)
+2026-05-11 12:21:01 [INFO]   [0.50,0.70):   533 (2.2%)
+2026-05-11 12:21:01 [INFO]   [0.70,0.85): 13180 (53.9%)
+2026-05-11 12:21:01 [INFO]   [0.85,0.95):  9799 (40.1%)
+2026-05-11 12:21:01 [INFO]   [0.95,1.00):   841 (3.4%)
+2026-05-11 12:21:01 [INFO]   nach Teacher-Precompute MEM: GPU0=0.0/0.0GB GPU1=0.0/0.0GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:21:01 [INFO] ============================================================
+2026-05-11 12:21:01 [INFO] Schritt 2: Student-Training mit KD
+2026-05-11 12:21:01 [INFO] KD: alpha=0.5, T=4.0
+2026-05-11 12:21:01 [INFO] ============================================================
+2026-05-11 12:21:01 [INFO] ############################################################
+2026-05-11 12:21:01 [INFO]   STUDENT: dinov2l (vit_large_patch14_dinov2.lvd142m)
+2026-05-11 12:21:01 [INFO] ############################################################
+2026-05-11 12:21:01 [INFO] ============================================================
+2026-05-11 12:21:01 [INFO]   [dinov2l] FOLD 1/3  Val=pen1_tur_cam1
+2026-05-11 12:21:01 [INFO] ============================================================
+2026-05-11 12:21:01 [INFO]   Train: 24250 (1000 pseudo) | Val: 200 | effBatch=32
+2026-05-11 12:21:06 [INFO] Loading pretrained weights from Hugging Face hub (timm/vit_large_patch14_dinov2.lvd142m)
+2026-05-11 12:21:06 [WARNING] Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-05-11 12:21:18 [INFO] [timm/vit_large_patch14_dinov2.lvd142m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-05-11 12:21:18 [INFO] Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2026-05-11 12:21:18 [INFO]   Student: vit_large_patch14_dinov2.lvd142m (304.4M Params)
+2026-05-11 12:21:18 [INFO]   nach Model-Init MEM: GPU0=0.0/0.0GB GPU1=1.2/1.2GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:21:18 [INFO]   EMA aktiv (decay=0.9995)
+2026-05-11 12:21:18 [INFO]   nach EMA-Init MEM: GPU0=0.0/0.0GB GPU1=2.4/2.4GB GPU2=0.0/0.0GB GPU3=0.0/0.0GB
+2026-05-11 12:21:18 [INFO]   CW: ['1.48', '1.34', '5.44', '0.49', '0.75']
+2026-05-11 12:21:18 [INFO]   ViT LLRD: 24 Layers, decay=0.75, 50 groups
+2026-05-11 12:21:18 [INFO]   -- Epoch 01/30 [warmup] lr=1.00e-06 --
+2026-05-11 12:23:07 [INFO]   [F1 E01 TRAIN] batch  151/1515 loss=1.7049 elapsed=1m48s eta=16m19s
+2026-05-11 12:24:48 [INFO]   [F1 E01 TRAIN] batch  302/1515 loss=1.6271 elapsed=3m29s eta=14m03s
+2026-05-11 12:26:30 [INFO]   [F1 E01 TRAIN] batch  453/1515 loss=1.5429 elapsed=5m11s eta=12m09s
+2026-05-11 12:28:12 [INFO]   [F1 E01 TRAIN] batch  604/1515 loss=1.4970 elapsed=6m53s eta=10m24s
+2026-05-11 12:29:54 [INFO]   [F1 E01 TRAIN] batch  755/1515 loss=1.4520 elapsed=8m35s eta=8m38s
+2026-05-11 12:31:35 [INFO]   [F1 E01 TRAIN] batch  906/1515 loss=1.4199 elapsed=10m16s eta=6m54s
+2026-05-11 12:33:17 [INFO]   [F1 E01 TRAIN] batch 1057/1515 loss=1.3896 elapsed=11m58s eta=5m11s
+2026-05-11 12:34:59 [INFO]   [F1 E01 TRAIN] batch 1208/1515 loss=1.3662 elapsed=13m40s eta=3m28s
+2026-05-11 12:36:40 [INFO]   [F1 E01 TRAIN] batch 1359/1515 loss=1.3439 elapsed=15m21s eta=1m45s
+2026-05-11 12:38:22 [INFO]   [F1 E01 TRAIN] batch 1510/1515 loss=1.3231 elapsed=17m03s eta=3s
+2026-05-11 12:38:25 [INFO]   [F1 E01 TRAIN] batch 1515/1515 loss=1.3232 elapsed=17m06s eta=0s
+2026-05-11 12:38:27 [INFO]   [F1 E01 VAL] batch    2/13 elapsed=1s
+2026-05-11 12:38:28 [INFO]   [F1 E01 VAL] batch    4/13 elapsed=2s
+2026-05-11 12:38:28 [INFO]   [F1 E01 VAL] batch    6/13 elapsed=3s
+2026-05-11 12:38:29 [INFO]   [F1 E01 VAL] batch    8/13 elapsed=3s
+2026-05-11 12:38:29 [INFO]   [F1 E01 VAL] batch   10/13 elapsed=4s
+2026-05-11 12:38:30 [INFO]   [F1 E01 VAL] batch   12/13 elapsed=4s
+2026-05-11 12:38:30 [INFO]   [F1 E01 VAL] batch   13/13 elapsed=4s
+2026-05-11 12:38:33 [INFO]   [F1 E01 EMA] batch    2/13 elapsed=2s
+2026-05-11 12:38:34 [INFO]   [F1 E01 EMA] batch    4/13 elapsed=3s
+2026-05-11 12:38:35 [INFO]   [F1 E01 EMA] batch    6/13 elapsed=4s
+2026-05-11 12:38:36 [INFO]   [F1 E01 EMA] batch    8/13 elapsed=6s
+2026-05-11 12:38:37 [INFO]   [F1 E01 EMA] batch   10/13 elapsed=7s
+2026-05-11 12:38:39 [INFO]   [F1 E01 EMA] batch   12/13 elapsed=8s
+2026-05-11 12:38:39 [INFO]   [F1 E01 EMA] batch   13/13 elapsed=8s
+2026-05-11 12:38:39 [INFO]   [BEST] F1 E01 train L=1.3232 F1=0.4262 | val[model] L=1.2506 F1=0.4341 | epoch=17m20s
+2026-05-11 12:38:40 [INFO]     saved runs/v8b_t2/best_dinov2l_fold_1.pth
+2026-05-11 12:38:40 [INFO]   -- Epoch 02/30 [warmup] lr=3.40e-05 --
+2026-05-11 12:38:43 [ERROR] FATAL: Training crashed
+2026-05-11 12:38:43 [ERROR] Traceback (most recent call last):
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8b_train.py", line 1014, in <module>
+    main()
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8b_train.py", line 918, in main
+    train_loss, train_f1, _ = train_one_epoch_kd(
+  File "/home/jovyan/work/notebooks/Maschine learning/Neuronale netzwerke/Mittelstufenprojekt/Mittelstufenprojekt/Mittelstufenprojekt/Fabian/v8b_train.py", line 717, in train_one_epoch_kd
+    scaler.scale(loss).backward()
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/opt/conda/envs/torch/lib/python3.10/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: CUDA out of memory. Tried to allocate 460.00 MiB (GPU 1; 31.75 GiB total capacity; 27.79 GiB already allocated; 1.67 GiB free; 28.68 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+2026-05-11 12:38:43 [INFO]   bei Crash MEM: GPU0=0.9/26.6GB GPU1=29.0/30.8GB GPU2=0.9/26.6GB GPU3=0.9/26.6GB
+2026-05-11 12:38:43 [INFO] === Total time: 51m13s ===
