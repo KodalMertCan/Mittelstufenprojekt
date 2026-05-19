@@ -12,6 +12,7 @@ Dieser Ordner enthält die finale Zusammenführung des Teams: die konsolidierte 
 | [v5_train.ipynb](v5_train.ipynb) | **Best-of-Model Training (V5)** – Ensemble aus DINOv2 Large + ConvNeXt V2 Large. Bestes Ergebnis im Leaderboard.  |
 | [v5_inference.ipynb](v5_inference.ipynb) | **Best-of-Model Inferenz (V5)** – Erstellt die finale Kaggle-Submission. |
 | [v5_inference_compare.ipynb](v5_inference_compare.ipynb) | Vergleichs-Inferenz für V5: Gegenüberstellung verschiedener Inferenz-Varianten (z. B. TTA, Ensemble-Gewichtung).|
+| [model_stats.ipynb](model_stats.ipynb) | **Auswertung des finalen V5-Modells:** Strict-CLO-Validierung aus den gespeicherten V5-Checkpoints inkl. Confusion Matrix, Per-Class-Scores (Precision/Recall/F1) und Per-Camera-Breakdowns. Zusätzlich Inspektion der finalen Submission (Klassenverteilung, Train-vs-Test-Vergleich). |
 
 ---
 
