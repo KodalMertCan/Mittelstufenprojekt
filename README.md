@@ -18,7 +18,7 @@ Mittelstufenprojekt-dev/
 ├── Daniel/      → Persönliche Experimente von Daniel
 ├── Fabian/      → Persönliche Experimente von Fabian
 ├── Mert/        → Persönliche Experimente von Mert
-├── Merge/       → Konsolidierte EDA + Best-of-Model
+├── merged/       → Konsolidierte EDA + Best-of-Model
 ├── README.md    → Diese Datei
 └── .gitignore
 ```
@@ -30,7 +30,7 @@ Mittelstufenprojekt-dev/
 | [`Daniel/`](Daniel/) | Individuelle Experimente von Daniel | – |
 | [`Fabian/`](Fabian/) | Individuelle Experimente von Fabian (V3–V8, DANN, KFold, Ensemble-Strategien) | – |
 | [`Mert/`](Mert/) | Individuelle Experimente von Mert (Baseline → ResNet50 → ConvNeXt → EVA02 → ConvNeXt-V2-Huge) | [README](Mert/README.md) |
-| [`Merge/`](Merge/) | **Einstiegspunkt für die finalen Ergebnisse:** Konsolidierte EDA + Best-of-Model (V5 Ensemble) | [README](Merge/README.md) |
+| [`Merge/`](merged/) | **Einstiegspunkt für die finalen Ergebnisse:** Konsolidierte EDA + Best-of-Model (V5 Ensemble) | [README](Merge/README.md) |
 
 ---
 
